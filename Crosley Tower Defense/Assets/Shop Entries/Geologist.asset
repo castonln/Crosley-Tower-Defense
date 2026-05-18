@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Geologist
   description: Throw rocks at your foes.
-  cost: 50
+  cost: 75
   prefab: {fileID: 7540663427879251050, guid: 26f6e037964539a498a4693452d9bae5, type: 3}
   path1:
     pathTitle: Master of Geology

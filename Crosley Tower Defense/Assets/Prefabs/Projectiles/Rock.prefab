@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6528445365147759564}
   - component: {fileID: 4101614875474416713}
   - component: {fileID: 7890626508982885999}
-  - component: {fileID: 1625407714076629703}
+  - component: {fileID: 969034648533319027}
   m_Layer: 12
   m_Name: Rock
   m_TagString: Untagged
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7947726122794643939, guid: 705433c8e90bbdd449edde47ef2a0671, type: 3}
-  m_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+  m_Sprite: {fileID: 2562675457439867617, guid: 09ec50b7550096345b0b22eefde34e04, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18404f763bbd639479f1758cf2c58955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!61 &1625407714076629703
+--- !u!61 &969034648533319027
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,15 +166,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.010000002, y: 0.11}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5833333, y: -1.3333334}
-    oldSize: {x: 0.12, y: 0.06}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.375, y: 0.1875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.12, y: 0.060000002}
+  m_Size: {x: 0.375, y: 0.1875}
   m_EdgeRadius: 0

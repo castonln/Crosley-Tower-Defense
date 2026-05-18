@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Computer Scientist
   description: Create viruses that spread among your enemies.
-  cost: 300
+  cost: 200
   prefab: {fileID: 7540663427879251050, guid: e1bc3222b662a9f418f2f01876f9a734, type: 3}
   path1:
     pathTitle: Master of Information Technology

@@ -25,8 +25,6 @@ public class Lane : MonoBehaviour
     {
         multipliers = _multipliers;
         SetStudentMultipliers();
-        print(_multipliers.strength);
-        print(_multipliers.speed);
         DisplayLaneBuff();
     }
 

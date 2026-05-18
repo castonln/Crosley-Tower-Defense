@@ -6,6 +6,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     [Header("References")]
     [SerializeField] private Transform studentSpawnPoint;
     [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private StudentSpawns studentSpawns;
 
     private GameObject studentInPlot = null;
     private LayerMask laneMask;
@@ -33,6 +34,10 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         {
             if (studentInPlot) return;
             GameObject _studentInPlot = BuildManager.main.SpawnStudent(this);
+
+            Vector3 scale = _studentInPlot.transform.localScale;
+            scale.x = studentSpawns.IsRightSide() ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+            _studentInPlot.transform.localScale = scale;
 
             studentInPlot = _studentInPlot;
             sr.enabled = false;

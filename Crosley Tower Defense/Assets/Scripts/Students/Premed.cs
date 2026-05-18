@@ -9,6 +9,7 @@ public class Premed : MonoBehaviour
     private void Start()
     {
         SetLaneMultipliers();
+        print("Multi set.");
     }
     private void OnTransformParentChanged()
     {
@@ -22,6 +23,7 @@ public class Premed : MonoBehaviour
     private void OnDestroy()
     {
         ResetLaneMultipliers();
+        print("Multi reset. Despawn finished.");
     }
 
     private void SetLaneMultipliers()

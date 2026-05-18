@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Physicist
   description: Experiment with a potato cannon.
-  cost: 100
+  cost: 75
   prefab: {fileID: 7540663427879251050, guid: d3e454b89b532594cb43b9478908a480, type: 3}
   path1:
     pathTitle: Master of Physics

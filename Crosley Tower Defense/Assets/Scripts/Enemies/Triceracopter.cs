@@ -14,6 +14,7 @@ public class Triceracopter : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private float secondsBetweenFiring = 5f;
     [SerializeField] private float health = 25;
+    [SerializeField] private int cashOnKill;
 
     private Color originalColor;
 
@@ -74,7 +75,7 @@ public class Triceracopter : MonoBehaviour
         if (damage >= health)
         {
             lane.RemoveEnemy(gameObject);
-            LevelManager.main.IncreaseCurrency(10);
+            LevelManager.main.IncreaseCurrency(cashOnKill);
             Destroy(gameObject);
         } else
         {

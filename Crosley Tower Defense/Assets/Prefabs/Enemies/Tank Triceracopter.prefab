@@ -361,6 +361,7 @@ MonoBehaviour:
   firingPoint: {fileID: 2578814754879981580}
   secondsBetweenFiring: 5
   health: 70
+  cashOnKill: 250
 --- !u!114 &5418168116606500289
 MonoBehaviour:
   m_ObjectHideFlags: 0

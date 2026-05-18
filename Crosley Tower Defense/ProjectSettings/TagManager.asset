@@ -68,5 +68,8 @@ TagManager:
   - name: UI
     uniqueID: 1404285935
     locked: 0
+  - name: Title Screen UI
+    uniqueID: 3286986697
+    locked: 0
   m_RenderingLayers:
   - Default

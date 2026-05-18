@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Musician
   description: Perform deadly music that deals damage over time.
-  cost: 150
+  cost: 200
   prefab: {fileID: 7540663427879251050, guid: 3ae7dd8d5b8ab4949b0a003fb52fdaaa, type: 3}
   path1:
     pathTitle: Master of Music

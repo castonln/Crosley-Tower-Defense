@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -19,7 +20,7 @@ public class BuildManager : MonoBehaviour
     private PlacementMode placementMode = PlacementMode.None;
 
     [Header("References")]
-    [SerializeField] private ShopEntries studentShopEntries;
+    [SerializeField] private ShopEntry[] studentShopEntries;
     [SerializeField] private LayerMask plotMask;
 
     private Dictionary<string, ShopEntry> studentDict = new();
@@ -36,7 +37,7 @@ public class BuildManager : MonoBehaviour
     private void Awake()
     {
         main = this;
-        foreach (var student in studentShopEntries.shopEntries)
+        foreach (var student in studentShopEntries)
         {
             studentDict[student.name] = student;
         }
@@ -107,6 +108,8 @@ public class BuildManager : MonoBehaviour
             return null;
         }
 
+        // Detach BEFORE destroying so OnDestroy can't find the Lane
+        selectedMoveStudent.transform.SetParent(null);
         DespawnStudent(selectedMoveStudent);
 
         GameObject studentObj = Instantiate(
@@ -202,7 +205,7 @@ public class BuildManager : MonoBehaviour
 
     public int GetSelectedStudentCost()
     {
-        foreach (var shopEntry in studentShopEntries.shopEntries)
+        foreach (var shopEntry in studentShopEntries)
         {
             if (shopEntry.name == selectedMoveStudent.name)
                 return shopEntry.cost;
@@ -212,7 +215,7 @@ public class BuildManager : MonoBehaviour
 
     public int GetSelectedStudentSellValue()
     {
-        foreach (var shopEntry in studentShopEntries.shopEntries)
+        foreach (var shopEntry in studentShopEntries)
         {
             if (shopEntry.name == selectedMoveStudent.name
                 || shopEntry.path1.pathTitle == selectedMoveStudent.name
@@ -224,7 +227,7 @@ public class BuildManager : MonoBehaviour
 
     public UpgradePath[] GetSelectedStudentUpgradePaths()
     {
-        foreach (var shopEntry in studentShopEntries.shopEntries)
+        foreach (var shopEntry in studentShopEntries)
         {
             if (shopEntry.name == selectedMoveStudent.name)
                 return new UpgradePath[] { shopEntry.path1, shopEntry.path2 };

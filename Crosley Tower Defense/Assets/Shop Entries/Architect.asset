@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Architect
   description: Repair the tower.
-  cost: 500
+  cost: 350
   prefab: {fileID: 5077020442952825387, guid: d279bddb0f8228c40b671c0e32f1fe5f, type: 3}
   path1:
     pathTitle: Construction Manager

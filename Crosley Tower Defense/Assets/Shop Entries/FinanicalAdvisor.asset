@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Financial Advisor
   description: Make some passive income for your team.
-  cost: 450
+  cost: 300
   prefab: {fileID: 5077020442952825387, guid: c350b94e85615134fba24566e282001b, type: 3}
   path1:
     pathTitle: Master of Business Administration
