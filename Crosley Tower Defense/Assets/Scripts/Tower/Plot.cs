@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IDropHandler
 {
     [Header("References")]
     [SerializeField] private Transform studentSpawnPoint;
@@ -28,7 +28,10 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         sr.enabled = true;
     }
 
-    public void OnPointerClick(PointerEventData eventData) 
+    public void OnPointerClick(PointerEventData eventData) => TryPlaceStudent();
+    public void OnDrop(PointerEventData eventData) => TryPlaceStudent();
+
+    private void TryPlaceStudent()
     {
         if (BuildManager.main.IsPlacingStudent())
         {
@@ -41,14 +44,13 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
             studentInPlot = _studentInPlot;
             sr.enabled = false;
-        } 
+        }
         else
         {
             if (!studentInPlot) return;
             BuildManager.main.SetSelectedStudentFromPlot(this);
         }
-
-     }
+    }
 
     public void OnPointerExit(PointerEventData eventData)
     {
