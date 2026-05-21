@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class CurrencyManager : MonoBehaviour
 {
-    public static LevelManager main;
+    public static CurrencyManager main;
 
     public static Action OnChangeCurrency;
 

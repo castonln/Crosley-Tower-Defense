@@ -8,7 +8,7 @@ public class ShopMenu : MonoBehaviour
 
     private void OnGUI()
     {
-        currencyUI.text = LevelManager.main.GetCurrency().ToString();
+        currencyUI.text = CurrencyManager.main.GetCurrency().ToString();
     }
 
     private void EnableShopMenu()

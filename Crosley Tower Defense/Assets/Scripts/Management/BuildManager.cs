@@ -68,7 +68,7 @@ public class BuildManager : MonoBehaviour
     private GameObject PlaceFromShop(Plot plot)
     {
         ShopEntry studentToPlace = GetSelectedShopStudent();
-        if (!LevelManager.main.SpendCurrency(studentToPlace.cost))
+        if (!CurrencyManager.main.SpendCurrency(studentToPlace.cost))
         {
             CancelPlacement();
             return null;
@@ -102,7 +102,7 @@ public class BuildManager : MonoBehaviour
 
     private GameObject PlaceUpgrade(Plot plot, UpgradePath pendingUpgrade)
     {
-        if (!LevelManager.main.SpendCurrency(pendingUpgrade.pathCost))
+        if (!CurrencyManager.main.SpendCurrency(pendingUpgrade.pathCost))
         {
             CancelPlacement();
             return null;
@@ -134,7 +134,7 @@ public class BuildManager : MonoBehaviour
 
     public void SellSelectedStudent()
     {
-        LevelManager.main.IncreaseCurrency(GetSelectedStudentSellValue());
+        CurrencyManager.main.IncreaseCurrency(GetSelectedStudentSellValue());
         DespawnStudent(selectedMoveStudent);
     }
 

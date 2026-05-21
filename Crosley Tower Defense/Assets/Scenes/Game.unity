@@ -1428,6 +1428,63 @@ PolygonCollider2D:
       - {x: 3.5004869, y: 0.2759409}
       - {x: 3.4953246, y: 0.99281514}
   m_UseDelaunayMesh: 0
+--- !u!1 &259129419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 259129421}
+  - component: {fileID: 259129420}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &259129420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259129419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f81b55d06fc1c74fa95f00c3088c9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  rightLane: {fileID: 618406811}
+  leftLane: {fileID: 1192004346}
+  topRightLane: {fileID: 2036868945}
+  topLeftLane: {fileID: 1125204027}
+  shootTarget: {fileID: 795349805}
+  enemyGroup: {fileID: 644586392}
+  waves:
+  - {fileID: 11400000, guid: a1966e70d6ca21843b847f918541cfb6, type: 2}
+  - {fileID: 11400000, guid: 88b5b47816d15a64db4b65eeeccd5e41, type: 2}
+  - {fileID: 11400000, guid: 685759efc563f3445bd2b6821570e934, type: 2}
+  - {fileID: 11400000, guid: 3ac2cec5cda36104998f01f8ba7203a8, type: 2}
+  - {fileID: 11400000, guid: 8264bd2032738b442b7ba9b391fac184, type: 2}
+  - {fileID: 11400000, guid: 9f9efeb29a9d7f5429cff5812f255f01, type: 2}
+--- !u!4 &259129421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259129419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.68999, y: -0.47888, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &297255249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,6 +3236,7 @@ GameObject:
   - component: {fileID: 674474814}
   - component: {fileID: 674474813}
   - component: {fileID: 674474812}
+  - component: {fileID: 674474816}
   - component: {fileID: 674474815}
   m_Layer: 5
   m_Name: Musician
@@ -3315,6 +3373,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopButton
   button: {fileID: 674474812}
   shopEntry: {fileID: 11400000, guid: 3a7971a98194e2146af86e01de3b1ae6, type: 2}
+--- !u!114 &674474816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674474810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991009607}
+          m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+          m_MethodName: SetSelectedStudentFromShop
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Musician
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &721010659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3599,6 +3686,7 @@ GameObject:
   - component: {fileID: 742305557}
   - component: {fileID: 742305556}
   - component: {fileID: 742305555}
+  - component: {fileID: 742305559}
   - component: {fileID: 742305558}
   m_Layer: 5
   m_Name: Premed
@@ -3735,6 +3823,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopButton
   button: {fileID: 742305555}
   shopEntry: {fileID: 11400000, guid: 0eaa08ca06fd2194a8c940483e42f81c, type: 2}
+--- !u!114 &742305559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742305553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991009607}
+          m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+          m_MethodName: SetSelectedStudentFromShop
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Premed
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &753342605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +4134,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 912346385}
-  - component: {fileID: 912346384}
   - component: {fileID: 912346387}
   - component: {fileID: 912346389}
   m_Layer: 0
@@ -4027,31 +4143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &912346384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912346383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f81b55d06fc1c74fa95f00c3088c9a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  rightLane: {fileID: 618406811}
-  leftLane: {fileID: 1192004346}
-  topRightLane: {fileID: 2036868945}
-  topLeftLane: {fileID: 1125204027}
-  shootTarget: {fileID: 795349805}
-  enemyGroup: {fileID: 644586392}
-  waves:
-  - {fileID: 11400000, guid: a1966e70d6ca21843b847f918541cfb6, type: 2}
-  - {fileID: 11400000, guid: 88b5b47816d15a64db4b65eeeccd5e41, type: 2}
-  - {fileID: 11400000, guid: 685759efc563f3445bd2b6821570e934, type: 2}
-  - {fileID: 11400000, guid: 3ac2cec5cda36104998f01f8ba7203a8, type: 2}
-  - {fileID: 11400000, guid: 8264bd2032738b442b7ba9b391fac184, type: 2}
-  - {fileID: 11400000, guid: 9f9efeb29a9d7f5429cff5812f255f01, type: 2}
 --- !u!4 &912346385
 Transform:
   m_ObjectHideFlags: 0
@@ -4892,7 +4983,6 @@ Transform:
   - {fileID: 92843278}
   - {fileID: 2032404929}
   - {fileID: 1560650225}
-  - {fileID: 1492751354}
   m_Father: {fileID: 1270407066}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1013518143
@@ -4923,6 +5013,7 @@ GameObject:
   - component: {fileID: 1050872860}
   - component: {fileID: 1050872859}
   - component: {fileID: 1050872858}
+  - component: {fileID: 1050872862}
   - component: {fileID: 1050872861}
   m_Layer: 5
   m_Name: Geologist
@@ -5059,6 +5150,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopButton
   button: {fileID: 1050872858}
   shopEntry: {fileID: 11400000, guid: 2ea6567e10db8da4ebca1fe6414fd16e, type: 2}
+--- !u!114 &1050872862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050872856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991009607}
+          m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+          m_MethodName: SetSelectedStudentFromShop
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Geologist
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1055384761
 GameObject:
   m_ObjectHideFlags: 0
@@ -5844,6 +5964,7 @@ GameObject:
   - component: {fileID: 1233160167}
   - component: {fileID: 1233160166}
   - component: {fileID: 1233160165}
+  - component: {fileID: 1233160169}
   - component: {fileID: 1233160168}
   m_Layer: 5
   m_Name: Physicist
@@ -5980,6 +6101,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopButton
   button: {fileID: 1233160165}
   shopEntry: {fileID: 11400000, guid: 437cbb4755264804981de08ba5b42e72, type: 2}
+--- !u!114 &1233160169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233160163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991009607}
+          m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+          m_MethodName: SetSelectedStudentFromShop
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Physicist
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1270407064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7668,7 +7818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba18d36b05dac1f439b5bed640ae801f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartWaveButton
-  enemySpawner: {fileID: 912346384}
+  enemySpawner: {fileID: 259129420}
 --- !u!1 &1477211051
 GameObject:
   m_ObjectHideFlags: 0
@@ -7700,96 +7850,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1192004345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1492751353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1492751354}
-  - component: {fileID: 1492751355}
-  m_Layer: 0
-  m_Name: Ground (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1492751354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492751353}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.52, y: -8.61, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 14.181886}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1013518142}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1492751355
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492751353}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 903273557
-  m_SortingLayer: -6
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -3878557786174838139, guid: 51b5dd9b113207345b2565b7ab98589f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!4 &1514145488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7583719254465692939, guid: c0a61aeb11a156b46963a7bda6430a4f, type: 3}
@@ -8168,6 +8228,7 @@ GameObject:
   - component: {fileID: 1571861430}
   - component: {fileID: 1571861429}
   - component: {fileID: 1571861428}
+  - component: {fileID: 1571861432}
   - component: {fileID: 1571861431}
   m_Layer: 5
   m_Name: Architect
@@ -8304,6 +8365,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopButton
   button: {fileID: 1571861428}
   shopEntry: {fileID: 11400000, guid: 1f88bca619372f84aa54683d5b9cb3f7, type: 2}
+--- !u!114 &1571861432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571861426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991009607}
+          m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+          m_MethodName: SetSelectedStudentFromShop
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Architect
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1585611179
 GameObject:
   m_ObjectHideFlags: 0
@@ -8452,6 +8542,7 @@ GameObject:
   - component: {fileID: 1601774082}
   - component: {fileID: 1601774081}
   - component: {fileID: 1601774080}
+  - component: {fileID: 1601774084}
   - component: {fileID: 1601774083}
   m_Layer: 5
   m_Name: Computer Scientist
@@ -8588,6 +8679,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopButton
   button: {fileID: 1601774080}
   shopEntry: {fileID: 11400000, guid: f4fd3401e93738340919ec3d32922cbd, type: 2}
+--- !u!114 &1601774084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601774078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991009607}
+          m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+          m_MethodName: SetSelectedStudentFromShop
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Computer Scientist
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1665759633
 GameObject:
   m_ObjectHideFlags: 0
@@ -10866,6 +10986,7 @@ GameObject:
   - component: {fileID: 2136989462}
   - component: {fileID: 2136989461}
   - component: {fileID: 2136989460}
+  - component: {fileID: 2136989464}
   - component: {fileID: 2136989463}
   m_Layer: 5
   m_Name: Financial Advisor
@@ -11002,6 +11123,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopButton
   button: {fileID: 2136989460}
   shopEntry: {fileID: 11400000, guid: 9acba9c411b69d14e8065717a24d0128, type: 2}
+--- !u!114 &2136989464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136989458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991009607}
+          m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+          m_MethodName: SetSelectedStudentFromShop
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Financial Advisor
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -11010,9 +11160,10 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 99127730}
   - {fileID: 991009608}
-  - {fileID: 644586393}
   - {fileID: 912346385}
+  - {fileID: 259129421}
+  - {fileID: 644586393}
   - {fileID: 1200331067}
-  - {fileID: 793047811}
   - {fileID: 1270407066}
   - {fileID: 409404868}
+  - {fileID: 793047811}

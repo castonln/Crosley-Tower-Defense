@@ -47,7 +47,7 @@ public class UpgradeMenu : MonoBehaviour
         gameObject.SetActive(true);
         studentName.text = BuildManager.main.GetSelectedStudentName();
         sellAmount.text = BuildManager.main.GetSelectedStudentSellValue().ToString();
-        currencyUI.text = LevelManager.main.GetCurrency().ToString();
+        currencyUI.text = CurrencyManager.main.GetCurrency().ToString();
 
         EnablePath1Button();
         EnablePath2Button();
@@ -80,12 +80,12 @@ public class UpgradeMenu : MonoBehaviour
         path1Cost.text = paths[0].pathCost.ToString();
         path2Cost.text = paths[1].pathCost.ToString();
 
-        if (paths[0].pathCost > LevelManager.main.GetCurrency())
+        if (paths[0].pathCost > CurrencyManager.main.GetCurrency())
         {
             DisablePath1Button();
         }
 
-        if (paths[1].pathCost > LevelManager.main.GetCurrency())
+        if (paths[1].pathCost > CurrencyManager.main.GetCurrency())
         {
             DisablePath2Button();
         }

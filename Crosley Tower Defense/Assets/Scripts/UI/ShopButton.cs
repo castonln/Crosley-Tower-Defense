@@ -15,17 +15,17 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnEnable()
     {
-        LevelManager.OnChangeCurrency += CheckButtonAffordability;
+        CurrencyManager.OnChangeCurrency += CheckButtonAffordability;
     }
 
     public void OnDisable()
     {
-        LevelManager.OnChangeCurrency += CheckButtonAffordability;
+        CurrencyManager.OnChangeCurrency += CheckButtonAffordability;
     }
 
     private void CheckButtonAffordability()
     {
-        if (shopEntry.cost > LevelManager.main.GetCurrency())
+        if (shopEntry.cost > CurrencyManager.main.GetCurrency())
         {
             DisableButton();
         } else
@@ -53,4 +53,5 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         TooltipManager.main.Hide();
     }
+
 }

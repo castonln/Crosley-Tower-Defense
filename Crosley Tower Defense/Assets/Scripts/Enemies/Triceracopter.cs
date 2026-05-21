@@ -75,7 +75,7 @@ public class Triceracopter : MonoBehaviour
         if (damage >= health)
         {
             lane.RemoveEnemy(gameObject);
-            LevelManager.main.IncreaseCurrency(cashOnKill);
+            CurrencyManager.main.IncreaseCurrency(cashOnKill);
             Destroy(gameObject);
         } else
         {
