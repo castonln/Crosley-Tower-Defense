@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -232,6 +233,20 @@ public class BuildManager : MonoBehaviour
             if (shopEntry.name == selectedMoveStudent.name)
                 return new UpgradePath[] { shopEntry.path1, shopEntry.path2 };
         }
+        return null;
+    }
+
+    public Sprite GetSelectedStudentSprite()
+    {
+        if (placementMode == PlacementMode.PlacingFromShop)
+        {
+            return studentDict[selectedShopStudentKey].prefab.GetComponent<SpriteRenderer>().sprite;
+        
+        } else if (placementMode == PlacementMode.MovingFromPlot)
+        {
+            return selectedMoveStudent.GetComponent<SpriteRenderer>().sprite;
+        }
+
         return null;
     }
 }

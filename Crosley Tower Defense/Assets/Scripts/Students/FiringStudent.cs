@@ -16,6 +16,8 @@ public abstract class FiringStudent : Student
 
     private void OnTransformParentChanged()
     {
+        if (transform.parent == null) return; 
+
         SetLaneMask(gameObject.GetComponentInParent<Plot>().GetLaneMask());
     }
 

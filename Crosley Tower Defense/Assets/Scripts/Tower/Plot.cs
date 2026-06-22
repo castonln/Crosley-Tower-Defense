@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IDropHandler
+public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IDragHandler, IDropHandler
 {
     [Header("References")]
     [SerializeField] private Transform studentSpawnPoint;
@@ -29,6 +29,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     }
 
     public void OnPointerClick(PointerEventData eventData) => TryPlaceStudent();
+    public void OnDrag(PointerEventData eventData) => TryPlaceStudent();
     public void OnDrop(PointerEventData eventData) => TryPlaceStudent();
 
     private void TryPlaceStudent()
