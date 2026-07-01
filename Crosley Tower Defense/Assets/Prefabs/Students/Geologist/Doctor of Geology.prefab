@@ -139,6 +139,6 @@ MonoBehaviour:
   actionSprite: {fileID: 7661790331391210747, guid: afa036aeaa438604db85d2e298e65451, type: 3}
   actionSpriteDuration: 1
   firingPoint: {fileID: 2578814754879981580}
-  firingVelocity: 15
+  firingVelocity: 8
   projectilePrefab: {fileID: 6588146788594497966, guid: 0a74412e247a2ae40886d56fffbbb294, type: 3}
   damage: 20

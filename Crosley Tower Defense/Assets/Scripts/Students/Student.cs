@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class Student : MonoBehaviour
 {
     [SerializeField] protected float secondsPerInterval = 1f;
-    [SerializeField] private Sprite actionSprite;      // the "acting" sprite
+    [SerializeField] private Sprite actionSprite;               // the "acting" sprite
     [SerializeField] private float actionSpriteDuration = 0.1f; // how long it shows
 
     private float timeSinceAction = 0f;
@@ -20,9 +20,9 @@ public abstract class Student : MonoBehaviour
         if (spriteRenderer != null)
             defaultSprite = spriteRenderer.sprite;
     }
-
     protected abstract float GetStrength();
     protected virtual float GetInterval() => secondsPerInterval;
+    protected virtual bool CanFlashAction() => true;
 
     private void Update()
     {
@@ -32,7 +32,10 @@ public abstract class Student : MonoBehaviour
         if (timeSinceAction >= GetInterval() / speedMultiplier)
         {
             DoAction(GetStrength() * strengthMultiplier);
-            StartCoroutine(FlashActionSprite());
+
+            if (CanFlashAction())
+                StartCoroutine(FlashActionSprite());
+
             timeSinceAction = 0f;
         }
     }

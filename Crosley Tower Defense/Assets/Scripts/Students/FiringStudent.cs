@@ -39,14 +39,17 @@ public abstract class FiringStudent : Student
 
     protected override void DoAction(float damage)
     {
-        if (target == null)
-        {
-            FindTarget();
-            return;
-        }
+        if (target == null) FindTarget();
 
-        Shoot(damage);
+        if (target != null) Shoot(damage);
     }
 
     protected abstract void Shoot(float damage);
+
+    protected override bool CanFlashAction()
+    {
+        if (GetTarget() != null)
+            return true;
+        return false;
+    }
 }
