@@ -49,9 +49,6 @@ public class UpgradeMenu : MonoBehaviour
         sellAmount.text = BuildManager.main.GetSelectedStudentSellValue().ToString();
         currencyUI.text = CurrencyManager.main.GetCurrency().ToString();
 
-        EnablePath1Button();
-        EnablePath2Button();
-
         UpgradePath[] paths = BuildManager.main.GetSelectedStudentUpgradePaths();
 
         if (paths == null)
@@ -67,7 +64,7 @@ public class UpgradeMenu : MonoBehaviour
 
             DisablePath1Button();
             DisablePath2Button();
-            
+
             return;
         }
 
@@ -80,15 +77,24 @@ public class UpgradeMenu : MonoBehaviour
         path1Cost.text = paths[0].pathCost.ToString();
         path2Cost.text = paths[1].pathCost.ToString();
 
+        CheckPathAffordability();
+    }
+
+    private void CheckPathAffordability()
+    {
+        UpgradePath[] paths = BuildManager.main.GetSelectedStudentUpgradePaths();
+
+        if (paths == null) return;
+
         if (paths[0].pathCost > CurrencyManager.main.GetCurrency())
-        {
             DisablePath1Button();
-        }
+        else
+            EnablePath1Button();
 
         if (paths[1].pathCost > CurrencyManager.main.GetCurrency())
-        {
             DisablePath2Button();
-        }
+        else
+            EnablePath2Button();
     }
 
     private void DisableUpdgradeMenu()
@@ -96,10 +102,19 @@ public class UpgradeMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void UpdateCurrencyUI()
+    {
+        currencyUI.text = CurrencyManager.main.GetCurrency().ToString();
+    }
+
     private void Start()
     {
         BuildManager.OnSelectMoveStudent += EnableUpgradeMenu;
         BuildManager.OnDeselectMoveStudent += DisableUpdgradeMenu;
+
+        CurrencyManager.OnChangeCurrency += CheckPathAffordability;
+        CurrencyManager.OnChangeCurrency += UpdateCurrencyUI;
+
         gameObject.SetActive(false);
     }
 
@@ -108,5 +123,7 @@ public class UpgradeMenu : MonoBehaviour
         BuildManager.OnSelectMoveStudent -= EnableUpgradeMenu;
         BuildManager.OnDeselectMoveStudent -= DisableUpdgradeMenu;
 
+        CurrencyManager.OnChangeCurrency -= CheckPathAffordability;
+        CurrencyManager.OnChangeCurrency -= UpdateCurrencyUI;
     }
 }

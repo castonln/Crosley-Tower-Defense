@@ -6,6 +6,6 @@ public class FinancialAdvisor : Student
     protected override float GetStrength() => moneyPerInterval;
     protected override void DoAction(float money)
     {
-        CurrencyManager.main.IncreaseCurrency((int)moneyPerInterval);
+        CurrencyManager.main.IncreaseCurrency((int)money);
     }
 }

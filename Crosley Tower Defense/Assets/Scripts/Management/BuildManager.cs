@@ -230,7 +230,7 @@ public class BuildManager : MonoBehaviour
     {
         foreach (var shopEntry in studentShopEntries)
         {
-            if (shopEntry.name == selectedMoveStudent.name)
+            if (shopEntry.name == selectedMoveStudent?.name)
                 return new UpgradePath[] { shopEntry.path1, shopEntry.path2 };
         }
         return null;
@@ -248,5 +248,10 @@ public class BuildManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public Plot GetSourcePlot()
+    {
+        return sourcePlot;
     }
 }

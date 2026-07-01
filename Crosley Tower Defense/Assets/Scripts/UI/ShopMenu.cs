@@ -6,7 +6,7 @@ public class ShopMenu : MonoBehaviour
     [Header("References")]
     [SerializeField] private TextMeshProUGUI currencyUI;
 
-    private void OnGUI()
+    private void UpdateCurrencyUI()
     {
         currencyUI.text = CurrencyManager.main.GetCurrency().ToString();
     }
@@ -25,12 +25,15 @@ public class ShopMenu : MonoBehaviour
     {
         BuildManager.OnSelectMoveStudent += DisableShopMenu;
         BuildManager.OnDeselectMoveStudent += EnableShopMenu;
+        CurrencyManager.OnChangeCurrency += UpdateCurrencyUI;
+        UpdateCurrencyUI();
     }
 
     private void OnDestroy()
     {
         BuildManager.OnSelectMoveStudent -= DisableShopMenu;
         BuildManager.OnDeselectMoveStudent -= EnableShopMenu;
+        CurrencyManager.OnChangeCurrency -= UpdateCurrencyUI;
 
     }
 }

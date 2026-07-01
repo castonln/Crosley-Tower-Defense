@@ -106,4 +106,4 @@ MonoBehaviour:
   secondsPerInterval: 5
   actionSprite: {fileID: -6052844762993073016, guid: 92abb4bb0c57dbd4984a66064ef390e6, type: 3}
   actionSpriteDuration: 0.1
-  moneyPerInterval: 12
+  moneyPerInterval: 30

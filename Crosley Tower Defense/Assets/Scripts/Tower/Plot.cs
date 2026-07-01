@@ -24,7 +24,6 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!BuildManager.main.IsPlacingStudent() && !studentInPlot) return;
-        if (BuildManager.main.IsPlacingStudent() && studentInPlot) return;
         sr.enabled = true;
     }
 
@@ -34,23 +33,22 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     private void TryPlaceStudent()
     {
-        if (BuildManager.main.IsPlacingStudent())
+        if (studentInPlot)
         {
-            if (studentInPlot) return;
-            GameObject _studentInPlot = BuildManager.main.SpawnStudent(this);
-
-            Vector3 scale = _studentInPlot.transform.localScale;
-            scale.x = studentSpawns.IsRightSide() ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
-            _studentInPlot.transform.localScale = scale;
-
-            studentInPlot = _studentInPlot;
-            sr.enabled = false;
+            if (BuildManager.main.GetSourcePlot() != this)
+                BuildManager.main.SetSelectedStudentFromPlot(this);
+            else
+                BuildManager.main.CancelPlacement();
+            return;
         }
-        else
-        {
-            if (!studentInPlot) return;
-            BuildManager.main.SetSelectedStudentFromPlot(this);
-        }
+
+        GameObject _studentInPlot = BuildManager.main.SpawnStudent(this);
+
+        Vector3 scale = _studentInPlot.transform.localScale;
+        scale.x = studentSpawns.IsRightSide() ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+        _studentInPlot.transform.localScale = scale;
+
+        studentInPlot = _studentInPlot;
     }
 
     public void OnPointerExit(PointerEventData eventData)
