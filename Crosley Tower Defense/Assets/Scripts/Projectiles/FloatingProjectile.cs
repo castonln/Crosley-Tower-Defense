@@ -22,10 +22,10 @@ public class FloatingProjectile : Projectile
         rb.linearVelocity = direction * projectileSpeed;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         Triceracopter triceracopter = collision.transform.parent.gameObject.GetComponent<Triceracopter>();
-        if (triceracopter != null)
+        if (triceracopter != null || triceracopter.GetIsReprogrammed())
         {
             triceracopter.TakeDamage(damage * Time.deltaTime);
         }

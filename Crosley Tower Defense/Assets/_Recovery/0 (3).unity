@@ -4311,7 +4311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80052fabc4e4a0e45a45b834db8bd006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currency: 10000
+  currency: 100
 --- !u!1 &916097244
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,7 +7298,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 708876209
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 6336582053773621623, guid: 30bfab13b1275ef45a5264a655248816, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9562,7 +9562,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 708876209
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -8946032095977852679, guid: 5dcbf737cbf42b8429970958bba8531e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10052,7 +10052,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 708876209
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 9001142860395406456, guid: 85d6d558a980fe845b27b2f1d6e81072, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

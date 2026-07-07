@@ -21,6 +21,9 @@ public class Triceracopter : MonoBehaviour
     private Transform shootTarget;
     private Lane lane;
 
+    private bool isReprogrammed = false;
+    private float selfDestructTimer = 10f;
+
     private float timeSinceFiring = 0f;
 
     private void Start()
@@ -36,6 +39,12 @@ public class Triceracopter : MonoBehaviour
         {
             Shoot();
             timeSinceFiring = 0f;
+        }
+
+        if (isReprogrammed)
+        {
+            selfDestructTimer -= Time.deltaTime;
+            if (selfDestructTimer <= 0f) HandleDeath();
         }
     }
 
@@ -72,11 +81,11 @@ public class Triceracopter : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (isReprogrammed) return;
+
         if (damage >= health)
         {
-            lane.RemoveEnemy(gameObject);
-            CurrencyManager.main.IncreaseCurrency(cashOnKill);
-            Destroy(gameObject);
+            HandleDeath();
         } else
         {
             health -= damage;
@@ -85,8 +94,44 @@ public class Triceracopter : MonoBehaviour
         }
     }
 
+    private void HandleDeath()
+    {
+        lane.RemoveEnemy(gameObject);
+        CurrencyManager.main.IncreaseCurrency(cashOnKill);
+        Destroy(gameObject);
+    }
+
     public float GetHealth()
     {
         return health;
+    }
+
+    // turns enemies into friends
+    public void Reprogram(GameObject reprogrammedBullet, float _selfDestructTimer)
+    {
+        isReprogrammed = true;
+        shootTarget = lane.GetSpawnPoint();
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        bulletPrefab = reprogrammedBullet;
+        gameObject.GetComponent<EnemyMovement>().Reprogram();
+        lane.RemoveEnemy(gameObject);
+        selfDestructTimer = _selfDestructTimer;
+
+
+        gameObject.layer = LayerMask.NameToLayer("Student Allies");
+        SetLayerAllChildren(gameObject.transform, gameObject.layer);
+        void SetLayerAllChildren(Transform root, int layer)
+        {
+            var children = root.GetComponentsInChildren<Transform>(includeInactive: true);
+            foreach (var child in children)
+            {
+                child.gameObject.layer = layer;
+            }
+        }
+    }
+
+    public bool GetIsReprogrammed()
+    {
+        return isReprogrammed;
     }
 }

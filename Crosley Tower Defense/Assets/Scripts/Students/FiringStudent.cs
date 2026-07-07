@@ -39,7 +39,7 @@ public abstract class FiringStudent : Student
 
     protected override void DoAction(float damage)
     {
-        if (target == null) FindTarget();
+        if (target == null || target.GetComponent<Triceracopter>().GetIsReprogrammed()) FindTarget();
 
         if (target != null) Shoot(damage);
     }

@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Enemy
+  - Student Allies
   - Plots
   - Right
   - Top Right
@@ -59,11 +59,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Student Projectiles
-    uniqueID: 1942265685
-    locked: 0
   - name: Damage
     uniqueID: 708876209
+    locked: 0
+  - name: Student Projectiles
+    uniqueID: 1942265685
     locked: 0
   - name: UI
     uniqueID: 1404285935

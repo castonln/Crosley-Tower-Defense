@@ -47,4 +47,29 @@ public class EnemyMovement : MonoBehaviour
     {
         moveTarget = targetPoint;
     }
+
+    public void Reprogram()
+    {
+        Transform reprogrammedTarget = new GameObject("reprogrammedTargetGameObj").transform;
+        // left lane
+        if (moveTarget.position.x < 0)
+        {
+            reprogrammedTarget.position = new Vector3(
+                moveTarget.position.x + 1.83f, 
+                moveTarget.position.y, 
+                moveTarget.position.z
+            );
+        }
+        // right lane
+        else
+        {
+            reprogrammedTarget.position = new Vector3(
+                moveTarget.position.x - 1.83f,
+                moveTarget.position.y,
+                moveTarget.position.z
+            );
+        }
+
+        SetTarget(reprogrammedTarget);
+    }
 }

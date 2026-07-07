@@ -66,6 +66,8 @@ public class Lane : MonoBehaviour
 
     public void RemoveEnemy(GameObject enemy)
     {
+        if (!enemies.Contains(enemy)) return;
+
         enemies.Remove(enemy);
 
         int curSortingOrder = 0;
@@ -96,5 +98,10 @@ public class Lane : MonoBehaviour
     private void HideLaneBuff()
     {
         laneBuffSprite.enabled = false;
+    }
+
+    public Transform GetSpawnPoint()
+    {
+        return spawnPoint;
     }
 }

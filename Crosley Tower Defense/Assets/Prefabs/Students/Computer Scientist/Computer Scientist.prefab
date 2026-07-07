@@ -139,5 +139,5 @@ MonoBehaviour:
   actionSprite: {fileID: -1673539800557819870, guid: c339ec93aeadbf64c84c1e8850817ec4, type: 3}
   actionSpriteDuration: 0.1
   firingPoint: {fileID: 2578814754879981580}
-  damagePerSecond: 5
+  damagePerSecond: 15
   floatingProjectilePrefab: {fileID: 6588146788594497966, guid: 1cbe97c4797374344ba5f5256b4f8b30, type: 3}
