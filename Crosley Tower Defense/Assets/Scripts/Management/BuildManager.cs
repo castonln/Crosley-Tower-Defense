@@ -88,10 +88,13 @@ public class BuildManager : MonoBehaviour
 
     private GameObject MoveFromPlot(Plot plot)
     {
-        selectedMoveStudent.transform.position = plot.StudentSpawnPoint().position + Vector3.up * 0.5f;
-        selectedMoveStudent.transform.rotation = plot.StudentSpawnPoint().rotation;
-        selectedMoveStudent.transform.SetParent(plot.transform);
-        sourcePlot.ClearStudent();
+        if (plot)
+        {
+            selectedMoveStudent.transform.position = plot.StudentSpawnPoint().position + Vector3.up * 0.5f;
+            selectedMoveStudent.transform.rotation = plot.StudentSpawnPoint().rotation;
+            selectedMoveStudent.transform.SetParent(plot.transform);
+        }
+        sourcePlot?.ClearStudent();
         sourcePlot = null;
         OnDeselectMoveStudent?.Invoke();
 
@@ -253,5 +256,30 @@ public class BuildManager : MonoBehaviour
     public Plot GetSourcePlot()
     {
         return sourcePlot;
+    }
+
+    public void SwapStudentsFromPlotAndSourcePlot(Plot selectedPlot)
+    {
+        Plot plotA = sourcePlot;
+        Plot plotB = selectedPlot;
+        GameObject studentA = selectedMoveStudent;
+        GameObject studentB = plotB.GetStudentInPlot();
+
+        // Move studentA into plotB
+        studentA.transform.position = plotB.StudentSpawnPoint().position + Vector3.up * 0.5f;
+        studentA.transform.rotation = plotB.StudentSpawnPoint().rotation;
+        studentA.transform.SetParent(plotB.transform);
+        plotB.SetStudentInPlot(studentA);
+
+        // Move studentB into plotA
+        studentB.transform.position = plotA.StudentSpawnPoint().position + Vector3.up * 0.5f;
+        studentB.transform.rotation = plotA.StudentSpawnPoint().rotation;
+        studentB.transform.SetParent(plotA.transform);
+        plotA.SetStudentInPlot(studentB);
+
+        sourcePlot = null;
+        selectedMoveStudent = null;
+        OnDeselectMoveStudent?.Invoke();
+        FinishPlacement();
     }
 }

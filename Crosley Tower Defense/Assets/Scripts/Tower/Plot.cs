@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -28,15 +29,23 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     }
 
     public void OnPointerClick(PointerEventData eventData) => TryPlaceStudent();
-    public void OnDrag(PointerEventData eventData) => TryPlaceStudent();
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!studentInPlot) return;
+        if (BuildManager.main.GetSourcePlot() == this) return; // already dragging this one, don't re-toggle
+        if (!BuildManager.main.GetSourcePlot())
+            BuildManager.main.SetSelectedStudentFromPlot(this);
+    }
     public void OnDrop(PointerEventData eventData) => TryPlaceStudent();
 
     private void TryPlaceStudent()
     {
         if (studentInPlot)
         {
-            if (BuildManager.main.GetSourcePlot() != this)
+            if (!BuildManager.main.GetSourcePlot())
                 BuildManager.main.SetSelectedStudentFromPlot(this);
+            else if (BuildManager.main.GetSourcePlot() != this)
+                BuildManager.main.SwapStudentsFromPlotAndSourcePlot(this);
             else
                 BuildManager.main.CancelPlacement();
             return;
