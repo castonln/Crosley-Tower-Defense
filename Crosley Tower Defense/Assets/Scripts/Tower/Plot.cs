@@ -8,7 +8,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     [SerializeField] private Transform studentSpawnPoint;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private StudentSpawns studentSpawns;
-    [SerializeField] private SortingLayer plotSortingLayer;
+    [SerializeField] private PlotSortingLayer plotSortingLayer;
 
     private GameObject studentInPlot = null;
     private LayerMask laneMask;
@@ -80,5 +80,10 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public bool IsRightSide()
     {
         return studentSpawns.IsRightSide();
+    }
+
+    public PlotSortingLayer GetPlotSortingLayer()
+    {
+        return plotSortingLayer;
     }
 }

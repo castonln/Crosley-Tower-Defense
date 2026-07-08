@@ -56,11 +56,32 @@ TagManager:
   - name: Plots
     uniqueID: 2244635065
     locked: 0
+  - name: Damage
+    uniqueID: 708876209
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Damage
-    uniqueID: 708876209
+  - name: Plot Layer 1
+    uniqueID: 1259741731
+    locked: 0
+  - name: Plot Layer 2
+    uniqueID: 2238528459
+    locked: 0
+  - name: Plot Layer 3
+    uniqueID: 917276169
+    locked: 0
+  - name: Plot Layer 4
+    uniqueID: 1378346351
+    locked: 0
+  - name: Plot Layer 5
+    uniqueID: 633423573
+    locked: 0
+  - name: Plot Layer 6
+    uniqueID: 2426313065
+    locked: 0
+  - name: Plot Layer 7
+    uniqueID: 3843113341
     locked: 0
   - name: Student Projectiles
     uniqueID: 1942265685

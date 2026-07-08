@@ -84,6 +84,7 @@ public class BuildManager : MonoBehaviour
         );
         studentObj.name = studentToPlace.prefab.name;
         AlignSpriteDirection(studentObj, plot);
+        PutSpriteInSortingLayer(studentObj, plot);
         FinishPlacement();
         return studentObj;
     }
@@ -97,6 +98,7 @@ public class BuildManager : MonoBehaviour
             student.transform.SetParent(plot.transform);
 
             AlignSpriteDirection(student, plot);
+            PutSpriteInSortingLayer(student, plot);
             plot.SetStudentInPlot(student);
         }
 
@@ -282,5 +284,10 @@ public class BuildManager : MonoBehaviour
         Vector3 scale = student.transform.localScale;
         scale.x = plot.IsRightSide() ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
         student.transform.localScale = scale;
+    }
+
+    private void PutSpriteInSortingLayer(GameObject student, Plot plot)
+    {
+        student.GetComponent<SpriteRenderer>().sortingLayerName = plot.GetPlotSortingLayer().ToDisplayName();
     }
 }
