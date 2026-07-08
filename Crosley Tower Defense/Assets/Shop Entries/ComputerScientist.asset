@@ -23,7 +23,6 @@ MonoBehaviour:
     pathPrefab: {fileID: 7540663427879251050, guid: 4f33735a5bc53fe40bbd4b087f8c3fdd, type: 3}
   path2:
     pathTitle: Master of Computer Science
-    pathDescription: Viruses reprogram Triceracopters to fight for you! (But self-destruct
-      after).
-    pathCost: 350
+    pathDescription: Viruses move slower, doing more damage over time.
+    pathCost: 250
     pathPrefab: {fileID: 7540663427879251050, guid: d7bb64cd93d0a2645a0a27d9b8ffb0e4, type: 3}

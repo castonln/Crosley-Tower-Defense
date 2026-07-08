@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -82,24 +83,42 @@ public class BuildManager : MonoBehaviour
             plot.transform
         );
         studentObj.name = studentToPlace.prefab.name;
+        AlignSpriteDirection(studentObj, plot);
         FinishPlacement();
         return studentObj;
     }
 
     private GameObject MoveFromPlot(Plot plot)
     {
-        if (plot)
+        void SpawnStudentInPlotFromGameObject(GameObject student, Plot plot)
         {
-            selectedMoveStudent.transform.position = plot.StudentSpawnPoint().position + Vector3.up * 0.5f;
-            selectedMoveStudent.transform.rotation = plot.StudentSpawnPoint().rotation;
-            selectedMoveStudent.transform.SetParent(plot.transform);
+            student.transform.position = plot.StudentSpawnPoint().position + Vector3.up * 0.5f;
+            student.transform.rotation = plot.StudentSpawnPoint().rotation;
+            student.transform.SetParent(plot.transform);
+
+            AlignSpriteDirection(student, plot);
+            plot.SetStudentInPlot(student);
         }
-        sourcePlot?.ClearStudent();
-        sourcePlot = null;
-        OnDeselectMoveStudent?.Invoke();
+
+        sourcePlot.ClearStudent();
+
+        // Swap
+        if (plot.GetStudentInPlot() != null)
+        {
+            Plot plotA = sourcePlot;
+            GameObject studentB = plot.GetStudentInPlot();
+            Plot plotB = plot;
+
+            SpawnStudentInPlotFromGameObject(studentB, plotA);
+            plotB.ClearStudent();
+        }
+
+        SpawnStudentInPlotFromGameObject(selectedMoveStudent, plot);
 
         GameObject studentObj = selectedMoveStudent;
         selectedMoveStudent = null;
+        sourcePlot = null;
+        OnDeselectMoveStudent?.Invoke();
         FinishPlacement();
         return studentObj;
     }
@@ -258,28 +277,10 @@ public class BuildManager : MonoBehaviour
         return sourcePlot;
     }
 
-    public void SwapStudentsFromPlotAndSourcePlot(Plot selectedPlot)
+    private void AlignSpriteDirection(GameObject student, Plot plot)
     {
-        Plot plotA = sourcePlot;
-        Plot plotB = selectedPlot;
-        GameObject studentA = selectedMoveStudent;
-        GameObject studentB = plotB.GetStudentInPlot();
-
-        // Move studentA into plotB
-        studentA.transform.position = plotB.StudentSpawnPoint().position + Vector3.up * 0.5f;
-        studentA.transform.rotation = plotB.StudentSpawnPoint().rotation;
-        studentA.transform.SetParent(plotB.transform);
-        plotB.SetStudentInPlot(studentA);
-
-        // Move studentB into plotA
-        studentB.transform.position = plotA.StudentSpawnPoint().position + Vector3.up * 0.5f;
-        studentB.transform.rotation = plotA.StudentSpawnPoint().rotation;
-        studentB.transform.SetParent(plotA.transform);
-        plotA.SetStudentInPlot(studentB);
-
-        sourcePlot = null;
-        selectedMoveStudent = null;
-        OnDeselectMoveStudent?.Invoke();
-        FinishPlacement();
+        Vector3 scale = student.transform.localScale;
+        scale.x = plot.IsRightSide() ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+        student.transform.localScale = scale;
     }
 }

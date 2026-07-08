@@ -8,6 +8,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     [SerializeField] private Transform studentSpawnPoint;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private StudentSpawns studentSpawns;
+    [SerializeField] private SortingLayer plotSortingLayer;
 
     private GameObject studentInPlot = null;
     private LayerMask laneMask;
@@ -40,24 +41,14 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     private void TryPlaceStudent()
     {
-        if (studentInPlot)
-        {
-            if (!BuildManager.main.GetSourcePlot())
-                BuildManager.main.SetSelectedStudentFromPlot(this);
-            else if (BuildManager.main.GetSourcePlot() != this)
-                BuildManager.main.SwapStudentsFromPlotAndSourcePlot(this);
-            else
-                BuildManager.main.CancelPlacement();
-            return;
-        }
+        if (studentInPlot && !BuildManager.main.GetSourcePlot())
+            BuildManager.main.SetSelectedStudentFromPlot(this);
 
-        GameObject _studentInPlot = BuildManager.main.SpawnStudent(this);
+        else if (BuildManager.main.GetSourcePlot() == this)
+            BuildManager.main.CancelPlacement();
 
-        Vector3 scale = _studentInPlot.transform.localScale;
-        scale.x = studentSpawns.IsRightSide() ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
-        _studentInPlot.transform.localScale = scale;
-
-        studentInPlot = _studentInPlot;
+        else
+            studentInPlot = BuildManager.main.SpawnStudent(this);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -84,5 +75,10 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public LayerMask GetLaneMask()
     {
         return laneMask;
+    }
+
+    public bool IsRightSide()
+    {
+        return studentSpawns.IsRightSide();
     }
 }
