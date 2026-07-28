@@ -110,7 +110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1884358989
-  m_SortingLayer: -5
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: 8939107211977973143, guid: fef62d9280fb45346a34a9f2b5b09149, type: 3}
   m_Color: {r: 1, g: 0.8548492, b: 0.57254905, a: 1}
@@ -308,7 +308,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.33, y: 1.33, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2578814754879981580}
@@ -356,8 +356,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192c5f4a46857c349bc657db71c1fe25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  bulletPrefab: {fileID: 8265216756344312817, guid: 145c794af5a75e74cb977bdda665dd14, type: 3}
+  bulletPrefab: {fileID: 1561783121858196807, guid: 635a0156043cada4787d262bd961833f, type: 3}
   sr: {fileID: 6838955368370420404}
+  triceracopterAnimator: {fileID: 5601463127625700187}
+  polyCol: {fileID: 3572597853509450079}
   firingPoint: {fileID: 2578814754879981580}
   secondsBetweenFiring: 5
   health: 70
@@ -379,5 +381,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   centerPoint: {fileID: 8498831540626072080}
-  baseSpeed: 0.5
+  baseSpeed: 0.1
   enemyDetectionRange: 0.5

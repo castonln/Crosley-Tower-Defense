@@ -162,7 +162,7 @@ public class Tower : MonoBehaviour
                 previousTopFloor.transform.rotation,
                 floors.transform
             );
-        newTopFloor.GetComponent<SpriteRenderer>().sortingOrder = floorsStack.Count;
+        newTopFloor.GetComponent<SpriteRenderer>().sortingOrder = floorsStack.Count + 1;
         floorsStack.Push(newTopFloor);
         OnFloorsStackChange?.Invoke();
         floorsAndGround.UpdateFloorsAndGroundRising();

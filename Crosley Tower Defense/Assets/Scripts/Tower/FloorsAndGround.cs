@@ -3,12 +3,22 @@ using UnityEngine;
 
 public class FloorsAndGround : MonoBehaviour
 {
+    public static FloorsAndGround main;
+
     [SerializeField] private float fallSpeed = 2f;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float shakeDuration = 0.3f;
     [SerializeField] private float shakeMagnitude = 0.1f;
 
+    private Vector3 restPos;
+
     private bool isMoving = false;
+
+    private void Awake()
+    {
+        main = this;
+        restPos = cameraTransform.localPosition;
+    }
 
     public bool IsMoving()
     {
@@ -49,18 +59,17 @@ public class FloorsAndGround : MonoBehaviour
 
     private IEnumerator ShakeCamera()
     {
-        Vector3 originalPos = cameraTransform.localPosition;
         float elapsed = 0f;
 
         while (elapsed < shakeDuration)
         {
             elapsed += Time.deltaTime;
             float strength = Mathf.Lerp(shakeMagnitude, 0f, elapsed / shakeDuration);
-            cameraTransform.localPosition = originalPos + Vector3.up * Mathf.Sin(elapsed * 40f) * strength;
+            cameraTransform.localPosition = restPos + Vector3.up * Mathf.Sin(elapsed * 40f) * strength;
             yield return null;
         }
 
-        cameraTransform.localPosition = originalPos;
+        cameraTransform.localPosition = restPos;
     }
 
     public void ShakeHorizontal()
@@ -70,7 +79,6 @@ public class FloorsAndGround : MonoBehaviour
 
     private IEnumerator ShakeCameraHorizontal()
     {
-        Vector3 originalPos = cameraTransform.localPosition;
         float elapsed = 0f;
 
         while (elapsed < shakeDuration)
@@ -78,10 +86,10 @@ public class FloorsAndGround : MonoBehaviour
             elapsed += Time.deltaTime;
             float strength = Mathf.Lerp(shakeMagnitude, 0f, elapsed / shakeDuration);
             float offsetX = Mathf.Sin(elapsed * 40f) * strength;
-            cameraTransform.localPosition = new Vector3(originalPos.x + offsetX, originalPos.y, originalPos.z);
+            cameraTransform.localPosition = new Vector3(restPos.x + offsetX, restPos.y, restPos.z);
             yield return null;
         }
 
-        cameraTransform.localPosition = originalPos;
+        cameraTransform.localPosition = restPos;
     }
 }

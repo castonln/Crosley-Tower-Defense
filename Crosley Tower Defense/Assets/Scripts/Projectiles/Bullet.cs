@@ -23,11 +23,14 @@ public class Bullet : MonoBehaviour
         if (Vector2.Distance(target.position, transform.position) < 0.1f)
         {
             Destroy(gameObject);
+            return; // added: avoid acting on a destroyed object this frame
         }
 
         Vector2 direction = (target.position - transform.position).normalized;
-
         rb.linearVelocity = direction * bulletSpeed;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.MoveRotation(angle);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -37,8 +40,13 @@ public class Bullet : MonoBehaviour
             collision.gameObject.transform.parent.GetComponent<Floors>())
         {
             collision.gameObject.transform.parent.GetComponent<Floors>().TakeDamage(bulletDamage);
-            Destroy(gameObject);
+            HandleDestroy();
         }
+    }
+
+    protected virtual void HandleDestroy()
+    {
+        Destroy(gameObject);
     }
 
     void OnBecameInvisible()

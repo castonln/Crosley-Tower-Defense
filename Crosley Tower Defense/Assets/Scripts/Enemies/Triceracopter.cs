@@ -9,6 +9,8 @@ public class Triceracopter : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject bulletPrefab;
     [SerializeReference] private SpriteRenderer sr;
+    [SerializeField] private Animator triceracopterAnimator;
+    [SerializeField] private PolygonCollider2D polyCol;
 
     [Header("Attributes")]
     [SerializeField] private Transform firingPoint;
@@ -98,6 +100,12 @@ public class Triceracopter : MonoBehaviour
     {
         lane.RemoveEnemy(gameObject);
         CurrencyManager.main.IncreaseCurrency(cashOnKill);
+        Destroy(polyCol);
+        triceracopterAnimator.SetTrigger("IsDead");
+    }
+
+    public void OnDeathAnimationComplete()
+    {
         Destroy(gameObject);
     }
 

@@ -24,8 +24,8 @@ public class FloatingProjectile : Projectile
 
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
-        Triceracopter triceracopter = collision.transform.parent.gameObject.GetComponent<Triceracopter>();
-        if (triceracopter != null || triceracopter.GetIsReprogrammed())
+        Triceracopter triceracopter = collision.transform.parent?.gameObject.GetComponent<Triceracopter>();
+        if (triceracopter != null) //|| triceracopter.GetIsReprogrammed())
         {
             triceracopter.TakeDamage(damage * Time.deltaTime);
         }
