@@ -28,7 +28,6 @@ public class SpaceMotion : MonoBehaviour
             Vector3 newPostion = new Vector3(lastTile.transform.position.x, lastTile.transform.position.y + 16, lastTile.transform.position.z);
             GameObject newTile = Instantiate(tilePrefab, newPostion, lastTile.transform.rotation, transform);
             tileStack.Push(newTile);
-            print(tileStack.Peek());
         }
         else if (tileStack.Peek().transform.position.y > despawnTriggerPoint.transform.position.y && tileStack.Peek() != originalLastTile) {
             Destroy(tileStack.Pop());
