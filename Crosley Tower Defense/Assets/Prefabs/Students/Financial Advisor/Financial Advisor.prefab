@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 782995778446383081}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8277941332898567069
@@ -107,3 +108,38 @@ MonoBehaviour:
   actionSprite: {fileID: 6275578078305271621, guid: 8e2d29691838442439bf5a988b404afc, type: 3}
   actionSpriteDuration: 0.1
   moneyPerInterval: 30
+  moneySpawnPoint: {fileID: 782995778446383081}
+  moneyPrefab: {fileID: 1105813971967216648, guid: 0d614adbbab2a6047a354e933ed3d952, type: 3}
+  speed: 2
+  lifespan: 1
+--- !u!1 &5080463875674766073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782995778446383081}
+  m_Layer: 0
+  m_Name: Money Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &782995778446383081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080463875674766073}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5712051247824135150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

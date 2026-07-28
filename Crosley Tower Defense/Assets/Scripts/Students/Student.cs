@@ -24,7 +24,7 @@ public abstract class Student : MonoBehaviour
     protected virtual float GetInterval() => secondsPerInterval;
     protected virtual bool CanFlashAction() => true;
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!EnemySpawner.main.IsWaveActive()) return;
 

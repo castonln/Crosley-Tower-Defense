@@ -6,6 +6,7 @@ public class Architect : Student
     protected override float GetStrength() => healthPerInterval;
     protected override void DoAction(float health)
     {
+        print("Tower healed");
         Tower.main.HealDamage((int)health);
     }
 }
