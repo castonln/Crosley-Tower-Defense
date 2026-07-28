@@ -27,6 +27,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         if (!BuildManager.main.IsPlacingStudent() && !studentInPlot) return;
         sr.enabled = true;
+        StudentHover.main.SetHoveringPlotWhileMoving(this);
     }
 
     public void OnPointerClick(PointerEventData eventData) => TryPlaceStudent();
@@ -55,6 +56,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         if (!BuildManager.main.IsPlacingStudent() && !studentInPlot) return;
         sr.enabled = false;
+        StudentHover.main.SetHoveringPlotWhileMoving(null);
     }
     
     public Transform StudentSpawnPoint()
