@@ -23,7 +23,7 @@ MonoBehaviour:
     pathPrefab: {fileID: 7540663427879251050, guid: 2054f8396364fb14fad9ebea74776a03, type: 3}
   path2:
     pathTitle: Master of Jazz Studies
-    pathDescription: 'Aquire a taste for freeform jazz. Do 3x as much damage per
-      second, but notes are performed seemingly at random between 1-6 seconds. '
+    pathDescription: 'Aquire a taste for freeform jazz. 3x as much damage at random
+      intervals. '
     pathCost: 175
     pathPrefab: {fileID: 7540663427879251050, guid: 80bd22525bbe61141a981a17c45eb864, type: 3}

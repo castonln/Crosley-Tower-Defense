@@ -10,9 +10,32 @@ public class CurrencyManager : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private int currency;
 
+    private int highestCurrency = 0;
+
     private void Awake()
     {
         main = this;
+        OnChangeCurrency += CheckIfHighestCurrency;
+    }
+
+    private void Start()
+    {
+        highestCurrency = currency;
+    }
+
+    private void OnDestroy()
+    {
+        OnChangeCurrency -= CheckIfHighestCurrency;
+
+    }
+    private void CheckIfHighestCurrency()
+    {
+        highestCurrency = currency > highestCurrency ? currency : highestCurrency;
+    }
+
+    public int GetHighestCurrency()
+    {
+        return highestCurrency;
     }
 
     public void IncreaseCurrency(int amount)

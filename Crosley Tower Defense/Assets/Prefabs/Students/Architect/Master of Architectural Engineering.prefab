@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21627be10dfe08942aec2325892ffaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  secondsPerInterval: 15
+  secondsPerInterval: 20
   actionSprite: {fileID: 2529134117268708915, guid: a8780642804efdb4ca218ddec08e2bf9, type: 3}
   actionSpriteDuration: 0.1
   healthPerInterval: 50

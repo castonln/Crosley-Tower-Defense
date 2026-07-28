@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   multipliers:
-    strength: 2
-    speed: 3
+    strength: 1.5
+    speed: 2

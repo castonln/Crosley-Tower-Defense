@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Architect
   description: Repair the tower.
-  cost: 350
+  cost: 400
   prefab: {fileID: 5077020442952825387, guid: d279bddb0f8228c40b671c0e32f1fe5f, type: 3}
   path1:
     pathTitle: Construction Manager
-    pathDescription: Repair 33% faster.
-    pathCost: 200
+    pathDescription: Repair 1.33x faster.
+    pathCost: 400
     pathPrefab: {fileID: 5077020442952825387, guid: a693bd9d3f7dc0a428e40962a903f15d, type: 3}
   path2:
     pathTitle: Master of Architectural Engineering
     pathDescription: Heal 2x as much damage.
-    pathCost: 500
+    pathCost: 600
     pathPrefab: {fileID: 5077020442952825387, guid: 85f4feadecc314a428d40815343ff418, type: 3}
