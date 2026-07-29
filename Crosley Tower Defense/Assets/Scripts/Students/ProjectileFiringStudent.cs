@@ -5,6 +5,7 @@ public class ProjectileFiringStudent : FiringStudent
     [SerializeField] private float firingVelocity = 15f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private int damage = 10;
+    [SerializeField] private float angularVelocity = 174f;
     protected override float GetStrength() => damage;
 
     private float g = 9.81f;
@@ -38,7 +39,10 @@ public class ProjectileFiringStudent : FiringStudent
             rb.linearVelocity = (direction * Mathf.Cos(firingAngle)
                                + Vector2.up * Mathf.Sin(firingAngle))
                                * firingVelocity;
+            rb.angularVelocity = angularVelocity;
         }
+
+        print(rb.angularVelocity);
     }
 
 }

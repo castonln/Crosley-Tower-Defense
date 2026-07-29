@@ -142,3 +142,4 @@ MonoBehaviour:
   firingVelocity: 8
   projectilePrefab: {fileID: 6588146788594497966, guid: 0a74412e247a2ae40886d56fffbbb294, type: 3}
   damage: 10
+  angularVelocity: 90

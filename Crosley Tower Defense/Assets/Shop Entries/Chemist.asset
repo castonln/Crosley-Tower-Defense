@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f079dcf160705468f00534e32742d5, type: 3}
+  m_Name: Chemist
+  m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
+  name: Chemist
+  description: Throw acidic solutions to take down groups of Triceracopters.
+  cost: 250
+  prefab: {fileID: 8500909584008196780, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+  path1:
+    pathTitle: Master of Chemical Engineering
+    pathDescription: Synthesize stronger acid.
+    pathCost: 250
+    pathPrefab: {fileID: 3758996190447666064, guid: e9b050d8596df274cb72b17a6a9990e4, type: 3}
+  path2:
+    pathTitle: Master of Chemistry
+    pathDescription: Acid reaches further (into other lanes) but does less damage.
+    pathCost: 500
+    pathPrefab: {fileID: 5608336982827275344, guid: 25ee65d0dcc59944ab727e07a7a88cf8, type: 3}

@@ -4,7 +4,7 @@ public class CollidingProjectile : Projectile
 {
     protected bool hasCollided = false;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (hasCollided) return;
 

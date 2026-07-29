@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4743397772951793980
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 340513591785581991, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4025867267551454139, guid: 9cbff636354cf3e46944e3974614d586, type: 3}
+    - target: {fileID: 987616830212323087, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 987616830212323087, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: actionSprite
+      value: 
+      objectReference: {fileID: 4709784899669421178, guid: 9cbff636354cf3e46944e3974614d586, type: 3}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.1640415
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.6925526
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730024447202213019, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500909584008196780, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
+      propertyPath: m_Name
+      value: Master of Chemical Engineering Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
