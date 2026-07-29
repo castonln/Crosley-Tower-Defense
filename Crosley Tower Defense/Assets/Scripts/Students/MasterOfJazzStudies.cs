@@ -1,7 +1,7 @@
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class MasterOfJazzStudies : FloatingProjectileFiringStudent
+public class MasterOfJazzStudies : VaryingFloatingProjectileFiringStudent
 {
     private int randInterval = 4;
 

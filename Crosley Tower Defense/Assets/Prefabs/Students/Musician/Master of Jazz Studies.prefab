@@ -112,7 +112,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4050341142582185940, guid: e4c16de8d6acece4c9138783085d6cd2, type: 3}
+  m_Sprite: {fileID: -1175288867539320842, guid: 472d2290b49dcc547af5d88aeb7edae0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,8 +136,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   secondsPerInterval: 1
-  actionSprite: {fileID: -801681976180105588, guid: e4c16de8d6acece4c9138783085d6cd2, type: 3}
+  actionSprite: {fileID: -8112702285236585358, guid: 472d2290b49dcc547af5d88aeb7edae0, type: 3}
   actionSpriteDuration: 1
   firingPoint: {fileID: 2578814754879981580}
   damagePerSecond: 6
-  floatingProjectilePrefab: {fileID: 6588146788594497966, guid: 2f75a3372c3988c49bdbc5817f0bab3d, type: 3}
+  floatingProjectilePrefab: {fileID: 0}
+  floatingProjectilePrefabVariants:
+  - {fileID: 6588146788594497966, guid: 2f75a3372c3988c49bdbc5817f0bab3d, type: 3}
+  - {fileID: 4998365039144561252, guid: 1d97c43fec417784b945a4020f86b0fa, type: 3}

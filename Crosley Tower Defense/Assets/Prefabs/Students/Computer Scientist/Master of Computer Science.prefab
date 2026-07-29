@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5808973705065966310}
   - component: {fileID: 9142934107701129067}
-  - component: {fileID: 911942876537063184}
+  - component: {fileID: 8509919211632817767}
   m_Layer: 0
   m_Name: Master of Computer Science
   m_TagString: Untagged
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &911942876537063184
+--- !u!114 &8509919211632817767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,12 +132,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7540663427879251050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39edd75280332874db5880cfd0aab024, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e69e5667b78f46b1bc07ad5fad29f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::VaryingFloatingProjectileFiringStudent
   secondsPerInterval: 4
   actionSprite: {fileID: -5074648392625892462, guid: 08153578a7c1a5146be4c3fd0d6800fe, type: 3}
   actionSpriteDuration: 0.1
   firingPoint: {fileID: 2578814754879981580}
   damagePerSecond: 8
-  floatingProjectilePrefab: {fileID: 2033423230903815981, guid: 71b88459b336b8946a54381277479e06, type: 3}
+  floatingProjectilePrefab: {fileID: 0}
+  floatingProjectilePrefabVariants:
+  - {fileID: 8083823225740431694, guid: 0fd97059c51f5da4da1a30c98e35d981, type: 3}
+  - {fileID: 310212710857938133, guid: aa62845f7cd2ade48b21916c4b28bb3e, type: 3}
