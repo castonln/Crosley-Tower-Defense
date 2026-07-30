@@ -7,7 +7,7 @@ public abstract class Student : MonoBehaviour
     [SerializeField] private Sprite actionSprite;               // the "acting" sprite
     [SerializeField] private float actionSpriteDuration = 0.1f; // how long it shows
 
-    private float timeSinceAction = 0f;
+    protected float timeSinceAction = 0f;
     protected float speedMultiplier = 1f;
     protected float strengthMultiplier = 1f;
 
@@ -40,7 +40,7 @@ public abstract class Student : MonoBehaviour
         }
     }
 
-    private IEnumerator FlashActionSprite()
+    protected IEnumerator FlashActionSprite()
     {
         if (spriteRenderer == null || actionSprite == null) yield break;
 

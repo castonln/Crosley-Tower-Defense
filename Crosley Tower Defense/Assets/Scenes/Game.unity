@@ -2283,12 +2283,12 @@ MonoBehaviour:
   shootTarget: {fileID: 795349805}
   enemyGroup: {fileID: 644586392}
   waves:
+  - {fileID: 11400000, guid: 9f9efeb29a9d7f5429cff5812f255f01, type: 2}
   - {fileID: 11400000, guid: a1966e70d6ca21843b847f918541cfb6, type: 2}
   - {fileID: 11400000, guid: 88b5b47816d15a64db4b65eeeccd5e41, type: 2}
   - {fileID: 11400000, guid: 685759efc563f3445bd2b6821570e934, type: 2}
   - {fileID: 11400000, guid: 3ac2cec5cda36104998f01f8ba7203a8, type: 2}
   - {fileID: 11400000, guid: 8264bd2032738b442b7ba9b391fac184, type: 2}
-  - {fileID: 11400000, guid: 9f9efeb29a9d7f5429cff5812f255f01, type: 2}
   - {fileID: 11400000, guid: 8110f8a49a6acfb46aca00dddfb552d3, type: 2}
   - {fileID: 11400000, guid: 009c0f3d25aa0a54e8f73cdd971fe94b, type: 2}
   - {fileID: 11400000, guid: bdf1fa7fa26baac49a68a3f6888be981, type: 2}

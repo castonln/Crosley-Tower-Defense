@@ -18,11 +18,11 @@ MonoBehaviour:
   prefab: {fileID: 5077020442952825387, guid: d279bddb0f8228c40b671c0e32f1fe5f, type: 3}
   path1:
     pathTitle: Construction Manager
-    pathDescription: Repair 1.33x faster.
-    pathCost: 700
+    pathDescription: Heal 2x as much damage.
+    pathCost: 800
     pathPrefab: {fileID: 5077020442952825387, guid: a693bd9d3f7dc0a428e40962a903f15d, type: 3}
   path2:
     pathTitle: Master of Architectural Engineering
-    pathDescription: Heal 2x as much damage.
-    pathCost: 800
+    pathDescription: Heal 3x as much damage.
+    pathCost: 1200
     pathPrefab: {fileID: 5077020442952825387, guid: 85f4feadecc314a428d40815343ff418, type: 3}

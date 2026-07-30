@@ -52,6 +52,8 @@ public class EnemySpawner : MonoBehaviour
     {
         if (!isWaveActive) return;
 
+        timeSinceWaveStart += Time.deltaTime;
+
         if (!isSpawning)
         {
             if (!AreEnemiesAlive()) WaveEnd();
@@ -59,7 +61,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
         timeSinceLastSpawn += Time.deltaTime;
-        timeSinceWaveStart += Time.deltaTime;
 
         if (timeSinceLastSpawn >= subWave.secondsBetweenEnemies)
         {
