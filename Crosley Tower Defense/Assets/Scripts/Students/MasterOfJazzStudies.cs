@@ -3,6 +3,10 @@ using static UnityEngine.GraphicsBuffer;
 
 public class MasterOfJazzStudies : VaryingFloatingProjectileFiringStudent
 {
+    [Header("Attributes")]
+    [SerializeField] private int randomLow = 1;
+    [SerializeField] private int randomHigh = 7;
+
     private int randInterval = 4;
 
     protected override float GetInterval() { 
@@ -17,7 +21,7 @@ public class MasterOfJazzStudies : VaryingFloatingProjectileFiringStudent
 
     private void SetRandInterval()
     {
-        randInterval = Random.Range(1, 7);
+        randInterval = Random.Range(randomLow, randomHigh);
     }
 
 }

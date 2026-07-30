@@ -135,11 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fd8f8e5250bea48ab597523381064d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  secondsPerInterval: 5
+  secondsPerInterval: 7
   actionSprite: {fileID: -4968030321440171864, guid: 2e874702a96520b4cbc43c64f3ecf33b, type: 3}
   actionSpriteDuration: 1
   firingPoint: {fileID: 1046913500979991640}
   firingVelocity: 8
   projectilePrefab: {fileID: 5541128362887290099, guid: 5144ba22409ab094d89b9ee5e057ce40, type: 3}
-  damage: 10
+  damage: 25
   angularVelocity: 30

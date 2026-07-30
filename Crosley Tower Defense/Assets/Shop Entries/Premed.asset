@@ -19,10 +19,10 @@ MonoBehaviour:
   path1:
     pathTitle: Doctor of Medicine
     pathDescription: Increase student speed by 1.33x.
-    pathCost: 550
+    pathCost: 650
     pathPrefab: {fileID: 5077020442952825387, guid: 6a006243f95cfbb45aa5492eb80ae312, type: 3}
   path2:
     pathTitle: Doctor of Osteopathic Medicine
     pathDescription: Increase student strength by 1.33x.
-    pathCost: 550
+    pathCost: 650
     pathPrefab: {fileID: 5077020442952825387, guid: f4f37761d1e13b54c85c886be744b543, type: 3}

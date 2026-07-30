@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Musician
   description: Perform deadly music that deals damage over time.
-  cost: 200
+  cost: 250
   prefab: {fileID: 7540663427879251050, guid: 3ae7dd8d5b8ab4949b0a003fb52fdaaa, type: 3}
   path1:
     pathTitle: Master of Music
-    pathDescription: Do 2x as much damage per second 40% faster.
-    pathCost: 200
+    pathDescription: Sing 2x as fast.
+    pathCost: 300
     pathPrefab: {fileID: 7540663427879251050, guid: 2054f8396364fb14fad9ebea74776a03, type: 3}
   path2:
     pathTitle: Master of Jazz Studies
-    pathDescription: 'Aquire a taste for freeform jazz. 3x as much damage at random
-      intervals. '
-    pathCost: 175
+    pathDescription: Aquire a taste for freeform jazz. Sing at random speeds.
+    pathCost: 350
     pathPrefab: {fileID: 7540663427879251050, guid: 80bd22525bbe61141a981a17c45eb864, type: 3}

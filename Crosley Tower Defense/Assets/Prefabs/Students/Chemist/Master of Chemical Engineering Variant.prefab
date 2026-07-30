@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: -4025867267551454139, guid: 9cbff636354cf3e46944e3974614d586, type: 3}
     - target: {fileID: 987616830212323087, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
       propertyPath: damage
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 987616830212323087, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
       propertyPath: actionSprite

@@ -18,11 +18,11 @@ MonoBehaviour:
   prefab: {fileID: 5077020442952825387, guid: c350b94e85615134fba24566e282001b, type: 3}
   path1:
     pathTitle: Master of Business Administration
-    pathDescription: Gain cash 2x as fast.
-    pathCost: 300
+    pathDescription: Gain 20 dollars every 2.5 seconds.
+    pathCost: 600
     pathPrefab: {fileID: 5077020442952825387, guid: 4f2ef2bc85de8334fac1b5ffb98cc439, type: 3}
   path2:
     pathTitle: Master of Finance
-    pathDescription: Gain 5% of your current balance every 10 sec.
-    pathCost: 500
+    pathDescription: Gain 3% of your current balance every 5 sec.
+    pathCost: 750
     pathPrefab: {fileID: 5077020442952825387, guid: 1df9c84d8395f69489f23289b16af970, type: 3}

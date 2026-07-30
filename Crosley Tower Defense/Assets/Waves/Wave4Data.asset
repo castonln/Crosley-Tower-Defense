@@ -15,13 +15,45 @@ MonoBehaviour:
   subWaves:
   - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
     count: 2
-    secondsBetweenEnemies: 3.33
+    secondsBetweenEnemies: 1
     spawnSide: 0
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 1
-    secondsBetweenEnemies: 3.33
-    spawnSide: 0
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
+  - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
     count: 2
-    secondsBetweenEnemies: 3.33
+    secondsBetweenEnemies: 1
+    spawnSide: 1
+  - enemyPrefab: {fileID: 0}
+    count: 1
+    secondsBetweenEnemies: 12
+    spawnSide: 1
+  - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
+    count: 3
+    secondsBetweenEnemies: 1
+    spawnSide: 2
+  - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
+    count: 3
+    secondsBetweenEnemies: 1
+    spawnSide: 3
+  - enemyPrefab: {fileID: 0}
+    count: 1
+    secondsBetweenEnemies: 16
+    spawnSide: 3
+  - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
+    count: 2
+    secondsBetweenEnemies: 1
+    spawnSide: 0
+  - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
+    count: 2
+    secondsBetweenEnemies: 1
+    spawnSide: 1
+  - enemyPrefab: {fileID: 0}
+    count: 1
+    secondsBetweenEnemies: 12
+    spawnSide: 2
+  - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
+    count: 2
+    secondsBetweenEnemies: 1
+    spawnSide: 2
+  - enemyPrefab: {fileID: 7540663427879251050, guid: 7e76f2077a4ef464bafce0a6b8fd01ce, type: 3}
+    count: 2
+    secondsBetweenEnemies: 1
     spawnSide: 3

@@ -104,10 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6b2e8675721a8439680b99ece3446c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  secondsPerInterval: 10
+  secondsPerInterval: 5
   actionSprite: {fileID: 6275578078305271621, guid: 8e2d29691838442439bf5a988b404afc, type: 3}
   actionSpriteDuration: 0.1
-  moneyPerInterval: 30
+  moneyPerInterval: 20
   moneySpawnPoint: {fileID: 782995778446383081}
   moneyPrefab: {fileID: 1105813971967216648, guid: 0d614adbbab2a6047a354e933ed3d952, type: 3}
   speed: 2

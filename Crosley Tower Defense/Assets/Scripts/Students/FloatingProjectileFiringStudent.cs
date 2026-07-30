@@ -4,6 +4,7 @@ public class FloatingProjectileFiringStudent : FiringStudent
 {
     [Header("Atttributes")]
     [SerializeField] private int damagePerSecond = 10;
+    [SerializeField] private int downwardCorrection = 0;
     protected override float GetStrength() => damagePerSecond;
 
     [Header("References")]
@@ -14,6 +15,10 @@ public class FloatingProjectileFiringStudent : FiringStudent
         FloatingProjectile projectile = Instantiate(floatingProjectilePrefab, firingPoint.position, Quaternion.identity)
             .GetComponent<FloatingProjectile>();
         projectile.SetDamage(damage);
-        projectile.SetDirection(target.position);
+
+        Vector3 direction = target.position;
+        direction.y -= downwardCorrection;
+
+        projectile.SetDirection(direction);
     }
 }

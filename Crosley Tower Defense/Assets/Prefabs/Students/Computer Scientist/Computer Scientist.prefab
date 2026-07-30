@@ -135,11 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2e69e5667b78f46b1bc07ad5fad29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VaryingFloatingProjectileFiringStudent
-  secondsPerInterval: 4
+  secondsPerInterval: 1
   actionSprite: {fileID: -1673539800557819870, guid: c339ec93aeadbf64c84c1e8850817ec4, type: 3}
   actionSpriteDuration: 0.1
   firingPoint: {fileID: 2578814754879981580}
-  damagePerSecond: 15
+  damagePerSecond: 2
+  downwardCorrection: 0
   floatingProjectilePrefab: {fileID: 0}
   floatingProjectilePrefabVariants:
   - {fileID: 8083823225740431694, guid: 0fd97059c51f5da4da1a30c98e35d981, type: 3}

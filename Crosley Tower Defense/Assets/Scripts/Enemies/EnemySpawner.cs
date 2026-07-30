@@ -59,17 +59,19 @@ public class EnemySpawner : MonoBehaviour
 
         timeSinceLastSpawn += Time.deltaTime;
 
-        if (timeSinceLastSpawn >= subWave.secondsBetweenEnemies && enemiesToSpawnInSubwave > 0)
+        if (timeSinceLastSpawn >= subWave.secondsBetweenEnemies)
         {
-            GameObject enemy = SpawnEnemy(subWave.enemyPrefab, GetLaneFromSpawnSide(subWave.spawnSide).SpawnPoint);
+            if (enemiesToSpawnInSubwave > 0)
+            {
+                GameObject enemy = SpawnEnemy(subWave.enemyPrefab, GetLaneFromSpawnSide(subWave.spawnSide).SpawnPoint);
 
-            enemiesToSpawnInSubwave--;
-            timeSinceLastSpawn = 0f;
-        }
-
-        if (enemiesToSpawnInSubwave == 0)
-        {
-            StartNextSubWave();
+                enemiesToSpawnInSubwave--;
+                timeSinceLastSpawn = 0f;
+            }
+            else
+            {
+                StartNextSubWave();
+            }
         }
 
     }
@@ -83,7 +85,8 @@ public class EnemySpawner : MonoBehaviour
 
         wave = waves[currentWaveIndex];
         subWave = wave.subWaves[currentSubWaveIndex];
-        enemiesToSpawnInSubwave = subWave.count * waveCountMultiplier;
+        SetEnemiesToSpawnInSubwave();
+        timeSinceLastSpawn = subWave.secondsBetweenEnemies;
         isSpawning = true;
         isWaveActive = true;
     }
@@ -108,7 +111,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void StartNextSubWave()
     {
-        timeSinceLastSpawn = 0f;
         currentSubWaveIndex++;
         if (currentSubWaveIndex >= wave.subWaves.Length)
         {
@@ -117,8 +119,9 @@ public class EnemySpawner : MonoBehaviour
         } else
         {
             subWave = wave.subWaves[currentSubWaveIndex];
-            enemiesToSpawnInSubwave = subWave.count * waveCountMultiplier;
+            SetEnemiesToSpawnInSubwave();
         }
+        timeSinceLastSpawn = subWave.secondsBetweenEnemies;
     }
     private Lane GetLaneFromSpawnSide(SpawnSide spawnSide)
     {
@@ -134,6 +137,8 @@ public class EnemySpawner : MonoBehaviour
 
     private GameObject SpawnEnemy(GameObject prefab, Transform spawnPoint)
     {
+        if (prefab == null) return null;
+
         GameObject enemy = Instantiate(
             prefab,
             spawnPoint.position,
@@ -149,6 +154,12 @@ public class EnemySpawner : MonoBehaviour
         if (subWave.spawnSide == SpawnSide.left || subWave.spawnSide == SpawnSide.topLeft)
             FlipHorizontally(enemy.transform);
         return enemy;
+    }
+
+    // we don't multiply empty events that wait for spawning
+    private void SetEnemiesToSpawnInSubwave()
+    {
+        enemiesToSpawnInSubwave = subWave.enemyPrefab != null ? subWave.count * waveCountMultiplier : subWave.count;
     }
 
     private void FlipHorizontally(Transform objectTransform)

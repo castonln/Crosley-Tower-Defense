@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: ComputerScientist
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Computer Scientist
-  description: Create viruses that spread among your enemies.
-  cost: 200
+  description: Create viruses that attack an entire lane.
+  cost: 350
   prefab: {fileID: 7540663427879251050, guid: e1bc3222b662a9f418f2f01876f9a734, type: 3}
   path1:
     pathTitle: Master of Information Technology
-    pathDescription: 2x creation speed.
-    pathCost: 250
+    pathDescription: 2x destructive strength.
+    pathCost: 400
     pathPrefab: {fileID: 7540663427879251050, guid: 4f33735a5bc53fe40bbd4b087f8c3fdd, type: 3}
   path2:
     pathTitle: Master of Computer Science
-    pathDescription: Viruses move slower, doing more damage over time.
-    pathCost: 250
+    pathDescription: 2x upload speed.
+    pathCost: 400
     pathPrefab: {fileID: 7540663427879251050, guid: d7bb64cd93d0a2645a0a27d9b8ffb0e4, type: 3}

@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ea12e1b50c1864abf075d6706cb441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  secondsPerInterval: 10
+  secondsPerInterval: 5
   actionSprite: {fileID: -6052844762993073016, guid: 92abb4bb0c57dbd4984a66064ef390e6, type: 3}
   actionSpriteDuration: 0.1
   moneyPerInterval: 0
@@ -143,4 +143,4 @@ MonoBehaviour:
   moneyPrefab: {fileID: 1105813971967216648, guid: 0d614adbbab2a6047a354e933ed3d952, type: 3}
   speed: 4
   lifespan: 1
-  interestMultiplier: 0.05
+  interestMultiplier: 0.03

@@ -155,4 +155,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   rb: {fileID: 3518396117567387233}
-  projectileSpeed: 5
+  projectileSpeed: 1.5

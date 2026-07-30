@@ -362,8 +362,8 @@ MonoBehaviour:
   polyCol: {fileID: 3572597853509450079}
   firingPoint: {fileID: 2578814754879981580}
   secondsBetweenFiring: 5
-  health: 30
-  cashOnKill: 50
+  health: 100
+  cashOnKill: 25
 --- !u!114 &5418168116606500289
 MonoBehaviour:
   m_ObjectHideFlags: 0

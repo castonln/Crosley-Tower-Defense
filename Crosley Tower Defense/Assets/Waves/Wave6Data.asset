@@ -13,35 +13,19 @@ MonoBehaviour:
   m_Name: Wave6Data
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
   subWaves:
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 1
-    secondsBetweenEnemies: 3.33
+  - enemyPrefab: {fileID: 7540663427879251050, guid: e4bafc025bd360f4489f74bf44fd78d3, type: 3}
+    count: 3
+    secondsBetweenEnemies: 1.11
+    spawnSide: 2
+  - enemyPrefab: {fileID: 7540663427879251050, guid: e4bafc025bd360f4489f74bf44fd78d3, type: 3}
+    count: 3
+    secondsBetweenEnemies: 1.11
+    spawnSide: 3
+  - enemyPrefab: {fileID: 7540663427879251050, guid: e4bafc025bd360f4489f74bf44fd78d3, type: 3}
+    count: 3
+    secondsBetweenEnemies: 1.11
     spawnSide: 0
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 1
-    secondsBetweenEnemies: 3.33
-    spawnSide: 1
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 1
-    secondsBetweenEnemies: 3.33
-    spawnSide: 2
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 1
-    secondsBetweenEnemies: 3.33
-    spawnSide: 3
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 2
-    secondsBetweenEnemies: 4.33
-    spawnSide: 3
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 2
-    secondsBetweenEnemies: 4.33
-    spawnSide: 2
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 2
-    secondsBetweenEnemies: 4.33
-    spawnSide: 1
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 2
-    secondsBetweenEnemies: 4.33
+  - enemyPrefab: {fileID: 7540663427879251050, guid: e4bafc025bd360f4489f74bf44fd78d3, type: 3}
+    count: 3
+    secondsBetweenEnemies: 1.11
     spawnSide: 1

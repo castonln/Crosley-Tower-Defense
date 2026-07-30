@@ -1687,7 +1687,7 @@ MonoBehaviour:
   shootTarget: {fileID: 795349805}
   enemyGroup: {fileID: 644586392}
   waves:
-  - {fileID: 11400000, guid: 8264bd2032738b442b7ba9b391fac184, type: 2}
+  - {fileID: 11400000, guid: 3ac2cec5cda36104998f01f8ba7203a8, type: 2}
 --- !u!4 &259129421
 Transform:
   m_ObjectHideFlags: 0
