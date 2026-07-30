@@ -114,6 +114,11 @@ public class Triceracopter : MonoBehaviour
         return health;
     }
 
+    public void SetHealth(int _health)
+    {
+        health = _health;
+    }
+
     // turns enemies into friends
     public void Reprogram(GameObject reprogrammedBullet, float _selfDestructTimer)
     {

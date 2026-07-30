@@ -68,6 +68,11 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject enemy = SpawnEnemy(subWave.enemyPrefab, GetLaneFromSpawnSide(subWave.spawnSide).SpawnPoint);
 
+                if (enemy && enemy.TryGetComponent<Triceracopter>(out Triceracopter spawnedTriceracopter))
+                {
+                    spawnedTriceracopter.SetHealth((int)spawnedTriceracopter.GetHealth() * waveCountMultiplier);
+                }
+
                 enemiesToSpawnInSubwave--;
                 timeSinceLastSpawn = 0f;
             }
