@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
     private bool isSpawning = false;
     private bool isWaveActive = false;
     private int waveCountMultiplier = 1;
+    private float timeSinceWaveStart = 0f;
 
     private SubWaveInfo subWave;
     private int currentSubWaveIndex = 0;
@@ -58,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         timeSinceLastSpawn += Time.deltaTime;
+        timeSinceWaveStart += Time.deltaTime;
 
         if (timeSinceLastSpawn >= subWave.secondsBetweenEnemies)
         {
@@ -87,6 +89,7 @@ public class EnemySpawner : MonoBehaviour
         subWave = wave.subWaves[currentSubWaveIndex];
         SetEnemiesToSpawnInSubwave();
         timeSinceLastSpawn = subWave.secondsBetweenEnemies;
+        timeSinceWaveStart = 0f;
         isSpawning = true;
         isWaveActive = true;
     }
@@ -98,6 +101,7 @@ public class EnemySpawner : MonoBehaviour
         currentWaveIndex++;
         currentSubWaveIndex = 0;
         timeSinceLastSpawn = 0f;
+        timeSinceWaveStart = 0f;
         waveTotalUI++;
         OnWaveEnd?.Invoke();
         print("Wave ended");
@@ -177,5 +181,10 @@ public class EnemySpawner : MonoBehaviour
     public int GetWaveTotalUI()
     {
         return waveTotalUI;
+    }
+
+    public float GetTimeSinceWaveStart()
+    {
+        return timeSinceWaveStart;
     }
 }

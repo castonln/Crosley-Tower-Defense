@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour
     {
         if (!target) return;
 
+        if (!EnemySpawner.main.IsWaveActive()) HandleDestroy();
+
         if (Vector2.Distance(target.position, transform.position) < 0.1f)
         {
             Destroy(gameObject);

@@ -8,7 +8,7 @@ public class Missle : Bullet
 
     protected override void HandleDestroy()
     {
-        FloorsAndGround.main.ShakeHorizontal();
+        if (EnemySpawner.main.IsWaveActive()) FloorsAndGround.main.ShakeHorizontal();
         animator.SetTrigger("IsExploded");
     }
 
