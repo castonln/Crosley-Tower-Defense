@@ -23,6 +23,6 @@ MonoBehaviour:
     pathPrefab: {fileID: 7540663427879251050, guid: 5350f76201e5a204f915669ddad669e0, type: 3}
   path2:
     pathTitle: Doctor of Physics
-    pathDescription: Ditch your potato cannon for a handheld particle gun..
+    pathDescription: Ditch your potato cannon for a handheld particle gun.
     pathCost: 300
     pathPrefab: {fileID: 7540663427879251050, guid: c2fb4cf148515cc4897c54c4819dda32, type: 3}
