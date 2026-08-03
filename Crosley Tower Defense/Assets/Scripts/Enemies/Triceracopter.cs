@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.LightTransport;
-using static UnityEngine.GraphicsBuffer;
 
 public class Triceracopter : MonoBehaviour
 {
