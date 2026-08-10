@@ -20,7 +20,7 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnDisable()
     {
-        CurrencyManager.OnChangeCurrency += CheckButtonAffordability;
+        CurrencyManager.OnChangeCurrency -= CheckButtonAffordability;
     }
 
     private void CheckButtonAffordability()
