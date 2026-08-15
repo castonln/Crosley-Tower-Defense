@@ -1,6 +1,8 @@
 <div align="center">
    <h1>Crosley Tower Defense</h1>
    <img width="600" alt="image" src="https://github.com/user-attachments/assets/1dd26446-ad34-4a95-b124-9795472d5ce0" />
+   <br />
+   <a href="https://ghostpierogi.itch.io/crosley-tower-defense"><img width="200" alt="image" src="http://jessemillar.github.io/available-on-itchio-badge/badge-bw.png" /></a>
 </div>
 
 ## Project Description
