@@ -37,6 +37,19 @@ public class TooltipManager : MonoBehaviour
         FollowMouse();
     }
 
+    public void Show(string text)
+    {
+        tooltipObject.SetActive(true);
+        tooltipDescription.text = text;
+        FollowMouse();
+    }
+
+    public void Show()
+    {
+        tooltipObject.SetActive(true);
+        FollowMouse();
+    }
+
     public void Hide()
     {
         tooltipObject.SetActive(false);
@@ -52,5 +65,10 @@ public class TooltipManager : MonoBehaviour
             out mousePos
         );
         tooltipRect.anchoredPosition = mousePos + offset;
+    }
+
+    public string GetTooltipDescription()
+    {
+        return tooltipDescription.text;
     }
 }
