@@ -11,6 +11,7 @@ public class Architect : Student
     protected override void Update()
     {
         if (!EnemySpawner.main.IsWaveActive()) return;
+        if (Tower.main.isFloorStackEmpty()) return;
 
         timeSinceAction += Time.deltaTime;
 

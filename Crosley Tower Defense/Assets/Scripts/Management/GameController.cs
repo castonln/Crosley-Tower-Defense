@@ -2,8 +2,17 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController main;
+
     [Header("References")]
     [SerializeField] private GameOverScreen gameOverScreen;
+
+    private bool isGameOver = false;
+
+    private void Awake()
+    {
+        main = this;
+    }
 
     private void Start()
     {
@@ -22,9 +31,14 @@ public class GameController : MonoBehaviour
 
     private void GameOver()
     {
+        isGameOver = true;
         GameSession.FinalWave = EnemySpawner.main.GetWaveTotalUI() - 1;
         GameSession.Currency = CurrencyManager.main.GetHighestCurrency();
         GameSession.TowerHeight = Tower.main.GetHighestFloorHeight();
         gameOverScreen.Enable();
+    }
+
+    public bool IsGameOver() { 
+        return isGameOver;
     }
 }

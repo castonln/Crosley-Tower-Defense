@@ -169,4 +169,9 @@ public class Tower : MonoBehaviour
     {
         return highestFloorHeight;
     }
+
+    public bool isFloorStackEmpty()
+    {
+        return true ? floorsStack.Count == 0 : false;
+    }
 }
