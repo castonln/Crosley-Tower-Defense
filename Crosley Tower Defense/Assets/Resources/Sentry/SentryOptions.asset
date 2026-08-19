@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SentryOptions
   m_EditorClassIdentifier: Sentry.Unity.dll::Sentry.Unity.ScriptableSentryUnityOptions
   <Enabled>k__BackingField: 1
-  <Dsn>k__BackingField: https://57b71bfc27f445a17e6c68648c5e82a8@o4511888678191104.ingest.us.sentry.io/4511888688218112
+  <Dsn>k__BackingField: https://57b71bfc27f445a17e6c68648c5e82a8@sentry-tunnel.rubixdatcubix.workers.dev/4511888688218112
   <CaptureInEditor>k__BackingField: 1
   <EnableErrorEventThrottling>k__BackingField: 0
   <ThrottleDedupeWindow>k__BackingField: 1000
