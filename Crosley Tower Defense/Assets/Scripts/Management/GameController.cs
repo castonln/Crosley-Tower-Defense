@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     private void GameOver()
     {
         isGameOver = true;
+        Time.timeScale = 1f;
         GameSession.FinalWave = EnemySpawner.main.GetWaveTotalUI() - 1;
         GameSession.Currency = CurrencyManager.main.GetHighestCurrency();
         GameSession.TowerHeight = Tower.main.GetHighestFloorHeight();

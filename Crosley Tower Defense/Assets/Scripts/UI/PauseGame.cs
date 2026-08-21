@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject quitBox;
 
     private float timeScaleBeforePause = 1f;
 
@@ -18,5 +20,21 @@ public class PauseGame : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = timeScaleBeforePause;
+    }
+
+    public void OpenQuitBox()
+    {
+        quitBox.SetActive(true);
+    }
+
+    public void CloseQuitBox()
+    {
+        quitBox.SetActive(false);
+    }
+
+    public void Quit()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Title Screen");
     }
 }
