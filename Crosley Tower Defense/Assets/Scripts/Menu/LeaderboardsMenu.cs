@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Services.Authentication;
 using Unity.Services.Leaderboards;
+using Unity.Services.Leaderboards.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class LeaderboardsMenu : Panel
     [SerializeField] private string leaderboardId = "Leaderboard";
     [SerializeField] private int playersPerPage = 7;
     [SerializeField] private LeaderboardsPlayerItem playerItemPrefab = null;
+    [SerializeField] private LeaderboardsPlayerItem playerItemEntryPrefab = null;
     [SerializeField] private RectTransform playersContainer = null;
     [SerializeField] public TextMeshProUGUI pageText = null;
     [SerializeField] private Button nextButton = null;
@@ -20,6 +22,8 @@ public class LeaderboardsMenu : Panel
 
     private int currentPage = 1;
     private int totalPages = 0;
+
+    private LeaderboardEntry submittedEntry;
 
     public override void Initialize()
     {
@@ -73,12 +77,12 @@ public class LeaderboardsMenu : Panel
                 await AuthenticationService.Instance.UpdatePlayerNameAsync(playerName);
             }
 
-            var entry = await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderboardId, score);
+            submittedEntry = await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderboardId, score);
 
             // entry.Rank is zero-based (top score = rank 0), matching the
             // zero-based Offset used below, so this lands on the exact page
             // that contains the entry we just submitted.
-            int page = (entry.Rank / playersPerPage) + 1;
+            int page = (submittedEntry.Rank / playersPerPage) + 1;
             LoadPlayers(page);
         }
         catch (Exception exception)
@@ -101,7 +105,13 @@ public class LeaderboardsMenu : Panel
             ClearPlayersList();
             for (int i = 0; i < scores.Results.Count; i++)
             {
-                LeaderboardsPlayerItem item = Instantiate(playerItemPrefab, playersContainer);
+                LeaderboardsPlayerItem item;
+
+                if (scores.Results[i].Rank == submittedEntry?.Rank)
+                    item = Instantiate(playerItemEntryPrefab, playersContainer);
+                else
+                    item = Instantiate(playerItemPrefab, playersContainer);
+
                 item.Initialize(scores.Results[i]);
             }
             totalPages = Mathf.Max(1, Mathf.CeilToInt((float)scores.Total / (float)scores.Limit));
