@@ -48,7 +48,10 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             BuildManager.main.CancelPlacement();
 
         else
+        {
+            EventSystem.current.SetSelectedGameObject(null);    // deselect UI from shop if dragged
             studentInPlot = BuildManager.main.SpawnStudent(this);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

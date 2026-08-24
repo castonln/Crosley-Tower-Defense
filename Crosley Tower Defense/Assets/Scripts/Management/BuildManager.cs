@@ -59,6 +59,7 @@ public class BuildManager : MonoBehaviour
 
     public GameObject SpawnStudent(Plot plot)
     {
+        TooltipManager.main.Hide();
         switch (placementMode)
         {
             case PlacementMode.PlacingFromShop: return PlaceFromShop(plot);
@@ -188,8 +189,10 @@ public class BuildManager : MonoBehaviour
         return selectedMoveStudent != null;
     }
 
-    private ShopEntry GetSelectedShopStudent()
+    public ShopEntry GetSelectedShopStudent()
     {
+        if (string.IsNullOrEmpty(selectedShopStudentKey))
+            return null;
         studentDict.TryGetValue(selectedShopStudentKey, out ShopEntry student);
         return student;
     }
@@ -221,6 +224,7 @@ public class BuildManager : MonoBehaviour
         placementMode = PlacementMode.None;
         isPlacingStudent = false;
         selectedShopStudentKey = "";
+        TooltipManager.main.Hide();
     }
 
     public string GetSelectedStudentName()

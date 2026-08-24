@@ -13,8 +13,10 @@ public class TooltipManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tooltipCost;
     [SerializeField] private RectTransform tooltipRect;
     [SerializeField] private Vector2 offset = new Vector2(10f, -10f);
+    [SerializeField] private Vector2 tapOffset = new Vector2(2f, 1f);
 
     private Canvas canvas;
+    private bool displayedFromTap = false;
 
     private void Awake()
     {
@@ -25,8 +27,18 @@ public class TooltipManager : MonoBehaviour
 
     private void Update()
     {
-        if (tooltipObject.activeSelf)
+        if (tooltipObject.activeSelf && !displayedFromTap)
             FollowMouse();
+    }
+
+    public void Show(string text, int cost, Vector2 position)
+    {
+        tooltipObject.SetActive(true);
+        tooltipDescription.text = text;
+        tooltipCost.text = cost.ToString();
+
+        displayedFromTap = true;
+        tooltipRect.position = position + tapOffset;
     }
 
     public void Show(string text, int cost)
@@ -53,6 +65,7 @@ public class TooltipManager : MonoBehaviour
     public void Hide()
     {
         tooltipObject.SetActive(false);
+        displayedFromTap = false;
     }
 
     private void FollowMouse()
