@@ -6091,7 +6091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -27.909973}
+  m_AnchoredPosition: {x: 0, y: -27.910004}
   m_SizeDelta: {x: -0.000030518, y: -160.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613654339
@@ -7157,23 +7157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   startWaveButton: {fileID: 1303677080}
-  pauseButton: {fileID: 11645982}
-  resumeButton: {fileID: 1737325615}
-  sellButton: {fileID: 58143518}
-  leftLaneStudentSpawns: {fileID: 1018781357}
-  rightLaneStudentSpawns: {fileID: 1486302641}
-  topLeftLaneStudentSpawns: {fileID: 863761856}
-  topRightLaneStudentSpawns: {fileID: 965796222}
-  middleLaneStudentSpawns: {fileID: 998278005}
-  upgradePathButtons:
-  - {fileID: 297255251}
-  - {fileID: 1569699483}
-  enemies: {fileID: 644586392}
-  leftLane: {fileID: 1192004346}
-  topRightLane: {fileID: 2036868945}
-  topLeftLane: {fileID: 1125204027}
-  rightLane: {fileID: 618406811}
-  enemySpawner: {fileID: 259129420}
 --- !u!4 &684915925
 Transform:
   m_ObjectHideFlags: 0
@@ -8872,11 +8855,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &863761856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 222887273255100278, guid: c0a61aeb11a156b46963a7bda6430a4f, type: 3}
-  m_PrefabInstance: {fileID: 2010831700}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &912346383
 GameObject:
   m_ObjectHideFlags: 0
@@ -9519,11 +9497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963538192}
   m_CullTransparentMesh: 1
---- !u!1 &965796222 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 222887273255100278, guid: c0a61aeb11a156b46963a7bda6430a4f, type: 3}
-  m_PrefabInstance: {fileID: 2052622208}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &970863280
 GameObject:
   m_ObjectHideFlags: 0
@@ -9810,11 +9783,6 @@ RectTransform:
   m_AnchoredPosition: {x: -399.68997, y: -341.7325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &998278005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 222887273255100278, guid: c0a61aeb11a156b46963a7bda6430a4f, type: 3}
-  m_PrefabInstance: {fileID: 1139104378}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1004918534
 GameObject:
   m_ObjectHideFlags: 0
@@ -10129,11 +10097,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 519420032}
   shakeDuration: 0.3
   shakeMagnitude: 0.1
---- !u!1 &1018781357 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 222887273255100278, guid: c0a61aeb11a156b46963a7bda6430a4f, type: 3}
-  m_PrefabInstance: {fileID: 1726736340}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018966272
 GameObject:
   m_ObjectHideFlags: 0
@@ -14291,11 +14254,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1192004345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1486302641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 222887273255100278, guid: c0a61aeb11a156b46963a7bda6430a4f, type: 3}
-  m_PrefabInstance: {fileID: 327623739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507753792
 GameObject:
   m_ObjectHideFlags: 0

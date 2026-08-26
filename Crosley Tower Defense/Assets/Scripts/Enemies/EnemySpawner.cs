@@ -193,4 +193,9 @@ public class EnemySpawner : MonoBehaviour
     {
         return timeSinceWaveStart;
     }
+
+    public void InjectWaves(WaveData[] _waves)
+    {
+        waves = _waves;
+    }
 }

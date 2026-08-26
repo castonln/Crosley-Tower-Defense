@@ -13,6 +13,13 @@ public class Lane : MonoBehaviour
 
     private List<GameObject> enemies = new List<GameObject>();
 
+    private Color laneBuffDefaultColor;
+
+    private void Start()
+    {
+        laneBuffDefaultColor = laneBuffSprite.color;
+    }
+
     public int GetNumberOfEnemies()
     {
         return enemies.Count;
@@ -93,9 +100,17 @@ public class Lane : MonoBehaviour
         laneBuffSprite.enabled = true;
     }
 
-    private void HideLaneBuff()
+    public void DisplayLaneBuff(Color color)
+    {
+        laneBuffDefaultColor = laneBuffSprite.color;
+        laneBuffSprite.color = color;
+        laneBuffSprite.enabled = true;
+    }
+
+    public void HideLaneBuff()
     {
         laneBuffSprite.enabled = false;
+        laneBuffSprite.color = laneBuffDefaultColor;
     }
 
     public Transform GetSpawnPoint()
