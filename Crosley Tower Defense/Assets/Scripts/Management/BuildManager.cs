@@ -146,6 +146,8 @@ public class BuildManager : MonoBehaviour
         );
         studentObj.name = pendingUpgrade.pathPrefab.name;
         pendingUpgrade = null;
+        AlignSpriteDirection(studentObj, plot);
+        PutSpriteInSortingLayer(studentObj, plot);
         plot.SetStudentInPlot(studentObj);
         FinishPlacement();
         return studentObj;
