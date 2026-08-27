@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8500909584008196780, guid: 7b02d32a7a089284f8bf25a8794fce2f, type: 3}
       propertyPath: m_Name
-      value: Master of Chemical Engineering Variant
+      value: Master of Chemical Engineering
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
