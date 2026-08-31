@@ -8372,7 +8372,6 @@ MonoBehaviour:
   tooltipRect: {fileID: 88523388}
   offset: {x: 25, y: 0}
   tapOffset: {x: 2, y: 1}
-  tooltipBoundaryBox: {x: 17.5, y: 9.66}
 --- !u!114 &793047813
 MonoBehaviour:
   m_ObjectHideFlags: 0

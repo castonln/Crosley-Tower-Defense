@@ -61,7 +61,7 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (BuildManager.main.GetSelectedShopStudent() != shopEntry && toggle.IsInteractable())
         {
-            TooltipManager.main.Show(shopEntry.description, shopEntry.cost, gameObject.transform.position);
+            TooltipManager.main.ShowStatic(shopEntry.description, shopEntry.cost, gameObject.transform.position);
             BuildManager.main.SetSelectedStudentFromShop(studentFromShop);
         }
         else
@@ -76,7 +76,7 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (toggle.IsInteractable())
         {
-            TooltipManager.main.Show(shopEntry.description, shopEntry.cost, gameObject.transform.position);
+            TooltipManager.main.ShowStatic(shopEntry.description, shopEntry.cost, gameObject.transform.position);
             BuildManager.main.SetSelectedStudentFromShop(studentFromShop);
         }
     }
