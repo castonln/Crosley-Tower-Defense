@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -13,15 +14,11 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void Start()
     {
+       CurrencyManager.OnChangeCurrency += CheckButtonAffordability;
        CheckButtonAffordability();
     }
 
-    public void OnEnable()
-    {
-        CurrencyManager.OnChangeCurrency += CheckButtonAffordability;
-    }
-
-    public void OnDisable()
+    public void OnDestroy()
     {
         CurrencyManager.OnChangeCurrency -= CheckButtonAffordability;
     }
@@ -54,6 +51,9 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (eventData is ExtendedPointerEventData extended && extended.pointerType == UIPointerType.Touch)
+            return;
+
         TooltipManager.main.Hide();
     }
 
@@ -66,6 +66,7 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         }
         else
         {
+            TooltipManager.main.Hide();
             BuildManager.main.CancelPlacement();
             EventSystem.current.SetSelectedGameObject(null);
         }

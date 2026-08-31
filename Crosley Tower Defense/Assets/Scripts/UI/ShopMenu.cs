@@ -25,6 +25,7 @@ public class ShopMenu : MonoBehaviour
     {
         BuildManager.OnSelectMoveStudent += DisableShopMenu;
         BuildManager.OnDeselectMoveStudent += EnableShopMenu;
+
         CurrencyManager.OnChangeCurrency += UpdateCurrencyUI;
         UpdateCurrencyUI();
     }
@@ -33,6 +34,7 @@ public class ShopMenu : MonoBehaviour
     {
         BuildManager.OnSelectMoveStudent -= DisableShopMenu;
         BuildManager.OnDeselectMoveStudent -= EnableShopMenu;
+
         CurrencyManager.OnChangeCurrency -= UpdateCurrencyUI;
 
     }
