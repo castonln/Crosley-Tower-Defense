@@ -45,16 +45,72 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (!isPlacingStudent) return;
-        if (!Mouse.current.leftButton.wasPressedThisFrame) return;
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+    //private void Update()
+    //{
+    //    if (!isPlacingStudent) return;
+    //    if (!Mouse.current.leftButton.wasPressedThisFrame) return;
+    //    if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        if (Physics2D.OverlapPoint(mousePos, plotMask) != null) return;
+    //    Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    //    if (Physics2D.OverlapPoint(mousePos, plotMask) != null) return;
+
+    //    CancelPlacement();
+    //}
+
+    private void LateUpdate()
+    {
+        if (!TryGetTapThisFrame(out Vector2 screenPos)) return;
+        if (IsPointerOverShopButton(screenPos)) return;
+        if (!isPlacingStudent) TooltipManager.main.Hide();
+        //if (IsPointerOverUI(screenPos)) return;
+
+        Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+        if (Physics2D.OverlapPoint(worldPos, plotMask) != null) return;
 
         CancelPlacement();
+    }
+
+    private bool TryGetTapThisFrame(out Vector2 screenPos)
+    {
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            screenPos = Mouse.current.position.ReadValue();
+            return true;
+        }
+
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            screenPos = Touchscreen.current.primaryTouch.position.ReadValue();
+            return true;
+        }
+
+        screenPos = default;
+        return false;
+    }
+
+    private bool IsPointerOverUI(Vector2 screenPos)
+    {
+        if (EventSystem.current == null) return false;
+
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            int touchId = Touchscreen.current.primaryTouch.touchId.ReadValue();
+            return EventSystem.current.IsPointerOverGameObject(touchId);
+        }
+
+        return EventSystem.current.IsPointerOverGameObject();
+    }
+
+    private bool IsPointerOverShopButton(Vector2 screenPos)
+    {
+        var eventData = new PointerEventData(EventSystem.current) { position = screenPos };
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        foreach (var result in results)
+            if (result.gameObject.GetComponent<ShopButton>() != null) return true;
+
+        return false;
     }
 
     public GameObject SpawnStudent(Plot plot)

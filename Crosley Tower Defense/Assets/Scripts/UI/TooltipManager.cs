@@ -75,6 +75,12 @@ public class TooltipManager : MonoBehaviour
         displayedFromTap = false;
     }
 
+    public void HideNonStatic()
+    {
+        if (!displayedFromTap)
+            Hide();
+    }
+
     private void FollowMouse()
     {
         LayoutRebuilder.ForceRebuildLayoutImmediate(tooltipRect);

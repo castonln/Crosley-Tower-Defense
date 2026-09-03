@@ -1,12 +1,14 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
-public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [Header("References")]
     [SerializeField] private Toggle toggle;
@@ -46,22 +48,32 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        TooltipManager.main.Show(shopEntry.description, shopEntry.cost);
+        if (Touchscreen.current == null || !Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+            TooltipManager.main.Show(shopEntry.description, shopEntry.cost);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (eventData is ExtendedPointerEventData extended && extended.pointerType == UIPointerType.Touch)
-            return;
+        TooltipManager.main.HideNonStatic();
+    }
 
-        TooltipManager.main.Hide();
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (!toggle.IsInteractable())
+        {
+            BuildManager.main.CancelPlacement();
+        }
+
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+            TooltipManager.main.ShowStatic(shopEntry.description, shopEntry.cost, gameObject.transform.position);
+        else
+            TooltipManager.main.Show(shopEntry.description, shopEntry.cost);
     }
 
     public void HandleClick(string studentFromShop)
     {
-        if (BuildManager.main.GetSelectedShopStudent() != shopEntry && toggle.IsInteractable())
-        {
-            TooltipManager.main.ShowStatic(shopEntry.description, shopEntry.cost, gameObject.transform.position);
+        if (BuildManager.main.GetSelectedShopStudent() != shopEntry)
+        {   
             BuildManager.main.SetSelectedStudentFromShop(studentFromShop);
         }
         else
@@ -76,7 +88,9 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (toggle.IsInteractable())
         {
-            TooltipManager.main.ShowStatic(shopEntry.description, shopEntry.cost, gameObject.transform.position);
+            if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+                TooltipManager.main.ShowStatic(shopEntry.description, shopEntry.cost, gameObject.transform.position);
+            
             BuildManager.main.SetSelectedStudentFromShop(studentFromShop);
         }
     }
