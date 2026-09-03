@@ -60,7 +60,8 @@ public class BuildManager : MonoBehaviour
     private void LateUpdate()
     {
         if (!TryGetTapThisFrame(out Vector2 screenPos)) return;
-        if (IsPointerOverShopButton(screenPos)) return;
+        if (IsPointerOverSpecifiedComponent<ShopButton>(screenPos)) return; // just "button" since it's actually a toggle and deselects when clicked off
+        if (IsPointerOverSpecifiedComponent<UpgradeMenu>(screenPos)) return;
         if (!isPlacingStudent) TooltipManager.main.Hide();
         //if (IsPointerOverUI(screenPos)) return;
 
@@ -109,6 +110,18 @@ public class BuildManager : MonoBehaviour
 
         foreach (var result in results)
             if (result.gameObject.GetComponent<ShopButton>() != null) return true;
+
+        return false;
+    }
+
+    private bool IsPointerOverSpecifiedComponent<T>(Vector2 screenPos)
+    {
+        var eventData = new PointerEventData(EventSystem.current) { position = screenPos };
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        foreach (var result in results)
+            if (result.gameObject.GetComponent<T>() != null) return true;
 
         return false;
     }
