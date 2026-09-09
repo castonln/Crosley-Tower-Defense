@@ -18,7 +18,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void Enable()
     {
-        Invoke("PrepareGameOverScreen", 3.0f);
+        Invoke(nameof(PrepareGameOverScreen), 3.0f);
     }
 
     private void PrepareGameOverScreen()
