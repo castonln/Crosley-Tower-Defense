@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Premed
   m_EditorClassIdentifier: Assembly-CSharp::ShopEntry
   name: Premed
-  description: Give a strength and speed buff to students in your lane.
+  description: Give a strength and speed buff to students in your lane
   cost: 500
   prefab: {fileID: 5077020442952825387, guid: eb80bd7ddb09c03439854bc2cc8fcdc8, type: 3}
   path1:
     pathTitle: Doctor of Medicine
-    pathDescription: Increase student speed by 1.33x.
+    pathDescription: Increase student speed by 1.33x
     pathCost: 650
     pathPrefab: {fileID: 5077020442952825387, guid: 6a006243f95cfbb45aa5492eb80ae312, type: 3}
   path2:
     pathTitle: Doctor of Osteopathic Medicine
-    pathDescription: Increase student strength by 1.33x.
+    pathDescription: Increase student strength by 1.33x
     pathCost: 650
     pathPrefab: {fileID: 5077020442952825387, guid: f4f37761d1e13b54c85c886be744b543, type: 3}
