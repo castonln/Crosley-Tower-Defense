@@ -48,4 +48,9 @@ public class FinancialAdvisor : Student
             currentLifetime = 0f;
         }
     }
+
+    protected void OnDestroy()
+    {
+        if (money != null) Destroy(money);
+    }
 }
