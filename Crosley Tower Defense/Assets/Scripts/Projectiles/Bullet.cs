@@ -11,10 +11,16 @@ public class Bullet : MonoBehaviour
 
     private Transform target;
 
+    private void Start()
+    {
+        bulletDamage *= EnemySpawner.main.GetWaveCountMultiplier();
+    }
+
     public void SetTarget(Transform _target)
     {
         target = _target;
     }
+
     private void FixedUpdate()
     {
         if (!target) return;

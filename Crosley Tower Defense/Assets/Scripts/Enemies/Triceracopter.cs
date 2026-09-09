@@ -29,6 +29,7 @@ public class Triceracopter : MonoBehaviour
     private void Start()
     {
         originalColor = sr.color;
+        health *= EnemySpawner.main.GetWaveCountMultiplier();
     }
 
     private void Update()
