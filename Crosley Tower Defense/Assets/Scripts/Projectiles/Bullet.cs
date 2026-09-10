@@ -51,6 +51,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    protected void StopMoving()
+    {
+        bulletSpeed = 0f;
+    }
+
     protected virtual void HandleDestroy()
     {
         Destroy(gameObject);

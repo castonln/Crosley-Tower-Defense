@@ -10,6 +10,7 @@ public class Missle : Bullet
     {
         if (EnemySpawner.main.IsWaveActive()) FloorsAndGround.main.ShakeHorizontal();
         animator.SetTrigger("IsExploded");
+        StopMoving();
     }
 
     public void Destroy()
