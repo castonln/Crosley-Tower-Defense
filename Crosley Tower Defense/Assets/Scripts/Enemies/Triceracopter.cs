@@ -1,7 +1,9 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Triceracopter : MonoBehaviour
+public class Triceracopter : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
 
     [Header("References")]
@@ -9,6 +11,7 @@ public class Triceracopter : MonoBehaviour
     [SerializeReference] private SpriteRenderer sr;
     [SerializeField] private Animator triceracopterAnimator;
     [SerializeField] private PolygonCollider2D polyCol;
+    [SerializeField] private EnemyHealthBar healthBar;
 
     [Header("Attributes")]
     [SerializeField] private Transform firingPoint;
@@ -26,10 +29,14 @@ public class Triceracopter : MonoBehaviour
 
     private float timeSinceFiring = 0f;
 
+    private float maxHealth;
+
     private void Start()
     {
         originalColor = sr.color;
         health *= EnemySpawner.main.GetWaveCountMultiplier();
+        maxHealth = health;
+        healthBar.UpdateHealthBar(health, maxHealth);
     }
 
     private void Update()
@@ -84,12 +91,14 @@ public class Triceracopter : MonoBehaviour
     {
         if (isReprogrammed) return;
 
-        if (damage >= health)
+        health -= damage;
+        healthBar.UpdateHealthBar(health, maxHealth);
+
+        if (health <= 0)
         {
             HandleDeath();
         } else
         {
-            health -= damage;
             StopAllCoroutines();
             StartCoroutine(FlashDamage());
         }
@@ -146,4 +155,24 @@ public class Triceracopter : MonoBehaviour
     {
         return isReprogrammed;
     }
+
+    // Health bar
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        healthBar.SetIsMouseHovering(true);
+        healthBar.gameObject.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        healthBar.SetIsMouseHovering(false);
+        healthBar.gameObject.SetActive(false);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        healthBar.ShowHealthBarTemporarily();
+    }
+
 }

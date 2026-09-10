@@ -16,16 +16,8 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
     count: 1
     secondsBetweenEnemies: 0
-    spawnSide: 0
+    spawnSide: 3
   - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
     count: 1
     secondsBetweenEnemies: 0
     spawnSide: 1
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 1
-    secondsBetweenEnemies: 0
-    spawnSide: 2
-  - enemyPrefab: {fileID: 7540663427879251050, guid: 5ee9f4ee21fb74144938c288192b1d02, type: 3}
-    count: 1
-    secondsBetweenEnemies: 0
-    spawnSide: 3
